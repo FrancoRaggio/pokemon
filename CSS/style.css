@@ -1,0 +1,34 @@
+body {
+    background-color: red;
+    padding: 10px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.content-cabecera {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+.content-logo {
+    width: 20%;
+    height: 50%;
+    overflow: hidden;
+    margin: auto;
+}
+.content-logo img{  
+    width: 80%;
+    height: 80%;
+}
+.content-cabecera h1{
+    font-weight: 50;
+    color: white;
+    margin-top: 10px;
+}
+.content-cabecera nav{
+    margin-top: 20px;
+}
