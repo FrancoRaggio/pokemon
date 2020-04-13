@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeApp</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="shortcut icon" href="../imagenes/favicon (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function() {
+          $('.flexslider').flexslider({
+              touch: true,
+              pauseOnAction: false,
+              pauseOnHover: false,
+          });
+        });
+    </script>
+</head>
+<body>
+    <header style="background-color: #919191;"></header>
+    <div class="cabecera">
+    <img src="../imagenes/header.png" style="width: 100%;">
+    </div>
+    <div class="nav">
+    <nav>
+        <a class="menu-link" href="../CompartiAmigo/comparti.html">Compartir</a>
+        <a class="menu-link" href="#">Ubicación</a>
+        <a class="menu-link" href="#">Sobre nosotros</a>
+    </nav>
+    </div>
+    <div class="segunda">
+        <h1 class="texto">¿De qué se trata?</h1>
+        <i class="fas fa-search"></i>
+        <input class="search" type="text" id="inputsearch" placeholder="¿Que desea buscar?">
+    </div>
+    <div id="pokemon_buscado"></div>
+    </div>
+    <div class="c-parrafo">
+        <p class="parrafo">
+            <br>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."<br><br>
+        </p>
+    </div>
+    <div class="segunda">
+        <h1 class="texto">Habilidades</h1>
+    </div>
+    <div class="flexslider">
+		<ul class="slides">
+			<li>
+				<img src="../imagenes/1.jpg" alt="">
+				<section class="flex-caption">
+					<p>LOREM IPSUM 1</p>
+				</section>
+			</li>
+			<li>
+				<img src="../imagenes/2.jpg" alt="">
+				<section class="flex-caption">
+					<p>LOREM IPSUM 2</p>
+				</section>
+			</li>
+			<li>
+				<img src="../imagenes/3.jpg" alt="">
+				<section class="flex-caption">
+					<p>LOREM IPSUM 3</p>
+				</section>
+			</li>
+		</ul>
+	</div>
+<script src="../JS/script.JS">
+</script>
+
+</body>
+</html>
