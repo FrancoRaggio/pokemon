@@ -3,56 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeApp</title>
+    <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="shortcut icon" href="../imagenes/favicon (1).png" type="image/x-icon">
-    <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <script type="text/javascript" charset="utf-8">
-        $(window).load(function() {
-          $('.flexslider').flexslider({
-              touch: true,
-              pauseOnAction: false,
-              pauseOnHover: false,
-          });
-        });
-    </script>
+    <title>Inicio</title>
 </head>
 <body>
     <div class="cabecera">
-    <img src="../imagenes/header.png">
-    </div>
-    <div class="nav">
-    <nav>
-        <a class="menu-link" href="../CompartiAmigo/comparti.html">Compartir</a>
-        <a class="menu-link" href="../ubicacion/ubicacion.html">Ubicación</a>
-        <a class="menu-link" href="#">Sobre nosotros</a>
-    </nav>
-    </div>
-    <div class="segunda">
-        <h1 class="texto">¿De qué se trata?</h1>
-        
-    </div>
-    <div class="icono">+
-        <div class="fas fa-search">
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="¿Que deseas buscar ?" title="Type in a name">
-    
+        <img src="../imagenes/header.png">
         </div>
-    </div>
-    <div id="pokemon_buscado"></div>
-    </div>
-    <div class="c-parrafo">
-        <p class="parrafo">
-            <br>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."<br><br>
-        </p>
-    </div>
-    <div class="segunda">
-        <h1 class="texto">Habilidades</h1>
-    </div>
-<script src="../JS/script.JS">
-</script>
-
+    <div class="topnav">
+        <a class="active" href="#">Inicio</a>
+        <a href="../CompartiAmigo/comparti.html">Compartir</a>
+        <a href="../ubicacion/ubicacion.html">Ubicacion</a>
+        <div class="search-container">
+            <form onsubmit="confirmInput()" action="../pokemon/pokemon.html">
+                <input type="text" placeholder="Que deseas buscar?" name="search">
+                <button id="poke" type="submit"><i class="fa fa-search"></i></button>
+              </form>
+        </div>
+      </div>
+      <p id="poke">poke.name</p>
+      <script src="../JS/script.JS"></script>
+      
 </body>
 </html>
