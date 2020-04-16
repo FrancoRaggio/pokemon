@@ -1,3 +1,6 @@
+body{
+    width: 100%;
+}
 header{
     background-color: #919191;
     text-align: left;
@@ -32,9 +35,20 @@ img{
     margin: 10px 0 0 0;
 }
 .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+label {
+    display: block;
+    font-weight: 800;
+    margin-bottom: .10rem;
+}
+
+/* .container {
     display: inline-block;
     width: 80%;
-}
+} */
 ul{
     list-style-type: none;
     margin: 50px;
@@ -42,6 +56,15 @@ ul{
     background-color: white;
     text-align: center;
 }
-body{
-    width: 100%;
+@media screen and (max-width: 768px) {
+    .container input {
+        width: 90%;
+    }   
+    .container textarea {
+        width: 90%;
+    }
+    .container .send-button {
+        position: relative;
+        left: 5%;
+    }
 }
