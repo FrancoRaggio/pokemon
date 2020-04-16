@@ -1,6 +1,6 @@
 //Buscar pokemon por nombre
 var nombre = prompt('Ingrese el pokemon que desea buscar');
-var poke = {};
+var pokemon = {};
 function consultpokemon(nombre) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`)
     .then(function (response) {
@@ -8,10 +8,11 @@ function consultpokemon(nombre) {
         .then(function (poke) {
             pokemon_element = document.getElementById( 'pokemon_buscado' );
             pokemon_element.innerText = poke.name;
-            console.log('Nombre Del pokemon:',pokemon.name)
+            pokemon_element.innerText =poke.types[0].type.name;
+/*             console.log('Nombre Del pokemon:',pokemon.name)
             console.log('Tipo de pokemon:',pokemon.types[0].type.name)
             console.log('Stats:')
-            console.log('base stat =',pokemon.stats[0].base_stat)
+            console.log('base stat =',pokemon.stats[0].base_stat) */
         })
     })   
 }
