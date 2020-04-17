@@ -9,21 +9,40 @@
     <title>Inicio</title>
 </head>
 <body>
-    <div class="cabecera">
-        <img src="../imagenes/header.png">
-        </div>
-    <div class="topnav">
-        <a class="active" href="#">Inicio</a>
-        <a href="../CompartiAmigo/comparti.html">Compartir</a>
-        <a href="../ubicacion/ubicacion.html">Ubicacion</a>
-        <div class="search-container">
-            <form >
-                <input type="text" placeholder="buscar" name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-              </form>
-        </div> 
+    <div id="contenedor">
+
+      <div id="cabecera">
+        <img src="../imagenes/header2.png">
       </div>
-        <h1 id="poke"></h1>
+
+      <div id="topnav">
+          <a class="button" href="#">Inicio</a>
+          <a class="button" href="../CompartiAmigo/comparti.html">Compartir</a>
+          <a class="button"href="../ubicacion/ubicacion.html">Ubicacion</a>
+
+          <div id="search-container">
+            <form action="">
+                <input id="buscar" type="search" placeholder="Buscar.." name="search">
+              </form>
+          </div>
+
+      </div> 
+
+      <div id="medio">
+          <div id="derecha">
+            <h1 id="Texto-derecha"> Publicidad </h1>
+          </div>
+          <div class="showBox">
+            <div class="casilleros">
+                <h2 class="tipo"> Nombre: </h2> <p class="texto"id="poke"></p><br>
+                <h2 class="tipo"> Habilidad: </h2> <p class="texto" id="habilidad"></p>
+            </div>
+          </div>
+      </div>
+      <div id="footer">
+        <h1>Nuestras redes</h1>
+      </div>
+    </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>     
         <script src="../JS/script.JS"></script>
 </body>
