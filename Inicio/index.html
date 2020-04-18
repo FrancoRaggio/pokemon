@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
-    <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="shortcut icon" href="../imagenes/favicon (1).png" type="image/x-icon">
-    <title>Inicio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="shortcut icon" href="../imagenes/favicon (1).png" type="image/x-icon">
+  <title>Inicio</title>
 </head>
+
 <body>
-    <div id="contenedor">
+  <div id="contenedor">
 
-      <div id="cabecera">
-        <img src="../imagenes/header2.png">
-      </div>
+    <div id="cabecera">
+      <img src="../imagenes/header2.png">
+    </div>
 
-      <div id="topnav">
-          <a class="button" href="#">Inicio</a>
-          <a class="button" href="../CompartiAmigo/comparti.html">Compartir</a>
-          <a class="button"href="../ubicacion/ubicacion.html">Ubicacion</a>
-
-          <div id="search-container">
-            <form action="">
-                <input id="buscar" type="search" placeholder="Buscar.." name="search">
-              </form>
-          </div>
-
-      </div> 
-
-      <div id="medio">
-          <div id="derecha">
-            <h1 id="Texto-derecha"> Publicidad </h1>
-          </div>
-          <div class="showBox">
-            <div class="casilleros">
-                <h2 class="tipo"> Nombre: </h2> <p class="texto"id="poke"></p><br>
-                <h2 class="tipo"> Habilidad: </h2> <p class="texto" id="habilidad"></p>
-            </div>
-          </div>
-      </div>
-      <div id="footer">
-        <h1>Nuestras redes</h1>
+    <div class="topnav">
+      <a class="button" href="#">Inicio</a>
+      <a class="button" href="../CompartiAmigo/comparti.html">Compartir</a>
+      <a class="button" href="../ubicacion/ubicacion.html">Ubicacion</a>
+      <div class="search-container">
+        <div>
+          <input id="search-input" type="text" placeholder="Buscar..." name="search">
+          <button id="search-button"><i class="fa fa-search"></i></button>
+        </div>
       </div>
     </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>     
-        <script src="../JS/script.JS"></script>
+
+    <div id="medio">
+      <div id="derecha">
+        <h1 id="Texto-derecha"> Publicidad </h1>
+      </div>
+      <div class="showBox">
+        <div class="casilleros">
+          <h2 class="tipo"> Nombre: </h2>
+          <p class="texto" id="poke"></p><br>
+          <h2 class="tipo"> Habilidad: </h2>
+          <p class="texto" id="habilidad"></p>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <h1>Nuestras redes</h1>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="../JS/script.JS"></script>
 </body>
+
 </html>

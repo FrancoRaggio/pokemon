@@ -1,24 +1,39 @@
-$('form').on('submit',function (eventito) {
-  eventito.preventDefault();
-  consultpokemon(document.getElementById('buscar'));
-  return console.log('hola mundo');
-}); 
-//Buscar pokemon por nombre
-function consultpokemon(poke) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/`+poke.value)
-    .then(function (response) {
-        response.json()
-        .then(function (poke) {
-            document.getElementById("poke").innerHTML =poke.name; 
-            poke.abilities.forEach(habilidades);
-            function habilidades(nombre) {
-                document.getElementById("habilidad").innerHTML =nombre.ability.name;
-            }
-/*             pokemon_element.innerText = poke.name;
-            pokemon_element.innerText =poke.types[0].type.name; */
 
+var search_input = document.getElementById('search-input');
+search_input.addEventListener("keydown", async (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        var pokemon_name = document.getElementById( 'search-input' ).value;
+        var pokemon = await getPokemon( pokemon_name);
+        pokemon.json().then( (poke) => { 
+            setSkill( poke );
+        });
+    }
+});
+
+var search_icon = document.getElementById('search-button');
+search_icon.addEventListener('click', async (event) => {
+    var pokemon_name = document.getElementById( 'search-input' ).value;
+    var pokemon = await getPokemon(pokemon_name);
+    pokemon.json().then( (poke) => { 
+        setSkill( poke );
+    });
+}, false );
+
+function getPokemon( pokemon_name ) {
+    return new Promise( (resolve, reject ) => {
+        fetch(`https://pokeapi.co/api/v2/pokemon/` + pokemon_name).then( ( poke ) => {
+            resolve( poke );
         })
-    })   
+    })
+}
+
+function setSkill( pokemon ) {
+    document.getElementById("poke").innerHTML = pokemon.name; 
+    pokemon.abilities.forEach(habilidades);
+    function habilidades(nombre) {
+        document.getElementById("habilidad").innerHTML =nombre.ability.name;
+    }
 }
 /*Agarra entre 200 pokemones aleatoriamente 
 function consultpokemons() {
