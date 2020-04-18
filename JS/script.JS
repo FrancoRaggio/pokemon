@@ -7,6 +7,7 @@ search_input.addEventListener("keydown", async (event) => {
         var pokemon = await getPokemon( pokemon_name);
         pokemon.json().then( (poke) => { 
             setSkill( poke );
+            setImage( poke ); 
         });
     }
 });
@@ -30,10 +31,15 @@ function getPokemon( pokemon_name ) {
 
 function setSkill( pokemon ) {
     document.getElementById("poke").innerHTML = pokemon.name; 
-    pokemon.abilities.forEach(habilidades);
-    function habilidades(nombre) {
-        document.getElementById("habilidad").innerHTML =nombre.ability.name;
+    var skills = '';
+    for ( var skill of pokemon.abilities ) {
+        skills = skills + skill.ability.name + ', ';
     }
+    document.getElementById("habilidad").innerHTML = skills;
+}
+
+function setImage( pokemon ) {
+    document.getElementById("imagen-pokemon").src = pokemon.sprites.front_default;
 }
 /*Agarra entre 200 pokemones aleatoriamente 
 function consultpokemons() {
