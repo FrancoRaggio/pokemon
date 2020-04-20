@@ -1,7 +1,8 @@
 $('form').on('submit',function (eventito) {
   eventito.preventDefault();
-  consultpokemon('buscar');
-  return console.log('hola mundo');
+  consultpokemon('pikachu');
+  return console.log (poke,tipo);
+  
 });
 //Buscar pokemon por nombre
 function consultpokemon(poke) {
@@ -9,9 +10,8 @@ function consultpokemon(poke) {
     .then(function (response) {
         response.json()
         .then(function (poke) {
-            document.getElementById("poke").innerHTML =poke.name;
-/*             pokemon_element.innerText = poke.name;
-            pokemon_element.innerText =poke.types[0].type.name; */
+          document.getElementById("poke").innerHTML=poke.name;
+          document.getElementById("tipo").innerHTML=poke.types[0].type.name;    
 
         })
     })   
