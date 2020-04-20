@@ -1,31 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
-    <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="shortcut icon" href="../imagenes/favicon (1).png" type="image/x-icon">
-    <title>Inicio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="shortcut icon" href="../imagenes/favicon (1).png" type="image/x-icon">
+  <title>Inicio</title>
 </head>
+
 <body>
-    <div class="cabecera">
-        <img src="../imagenes/header.png">
-        </div>
+  <div id="contenedor">
+
+    <div id="cabecera">
+      <img src="../imagenes/header2.png">
+    </div>
+
     <div class="topnav">
-        <a class="active" href="#">Inicio</a>
-        <a href="../CompartiAmigo/comparti.html">Compartir</a>
-        <a href="../ubicacion/ubicacion.html">Ubicacion</a>
-        <div class="search-container">
-            <form >
-                <input type="text" placeholder="buscar" name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-              </form>
-        </div> 
+      <a class="button" href="#">Inicio</a>
+      <a class="button" href="../CompartiAmigo/comparti.html">Compartir</a>
+      <a class="button" href="../ubicacion/ubicacion.html">Ubicacion</a>
+      <div class="search-container">
+        <div>
+          <input id="search-input" type="text" placeholder="Buscar..." name="search">
+          <button id="search-button"><i class="fa fa-search"></i></button>
+        </div>
       </div>
-        <h1 id="poke"></h1>
-        <h1 id="tipo"></h1>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>     
-        <script src="../JS/script.JS"></script>
+    </div>
+
+    <div id="medio">
+        <!-- filtro2 -->
+      <div id="derecha">
+        <h1 id="Texto-derecha"> Filtros </h1>
+        <button type="submit" id="mybutton" onclick="myFunction()">
+          <ul id="myUL">
+            <li><a href="#"  id="type" >Tipos</a>
+            <li><a href="#">Colores</a></li>
+            <li><a href="#">Generos</a></li>
+          </ul>
+        </button>
+      </div>
+
+      <div class="showBox">
+        <div class="casilleros">
+          <h1 class="quicks-h1">pokemones</h1>
+          <div id="pokedex" class="imga1"></div>
+          <h2 class="tipo"> Nombre: </h2>
+          <p class="texto" id="poke"></p><br>
+          <h2 class="tipo"> Habilidad: </h2>
+          <p class="texto" id="habilidad"></p>
+          <img width="200" id="imagen-pokemon">
+          
+          <!-- filtro 1 -->
+<!--           <p>Presione el botón para obtener el pokemon filtrado por tipo:</p>
+          
+          <button id="filter">Filtrar Pokemon por tipo</button>
+          
+          <p id="demo"></p> -->
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <h1>Nuestras redes</h1>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="../JS/script.JS"></script>
 </body>
+
 </html>
