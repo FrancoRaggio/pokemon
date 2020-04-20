@@ -38,7 +38,9 @@ function setSkill( pokemon ) {
     }
     document.getElementById("habilidad").innerHTML = skills;
 }
-
+function setImage(pokemon){
+    document.getElementById("imagen-pokemon").src=pokemon.sprites.front_default;
+}
  const fetchPokemon = () => {
         const promises = [];
         for (let i = 1; i <= 6; i++) {

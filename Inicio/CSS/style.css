@@ -175,11 +175,6 @@ input[type="search"]:focus{
   background: #ccc;
 }
 
-.imagen-pokemon {
-  position: float
-  top: 30%;
-  left: 0%;
-}
 /* filtros */
 #mybutton {
   width: 100%;
