@@ -7,7 +7,7 @@ search_input.addEventListener("keydown", async (event) => {
         var pokemon = await getPokemon( pokemon_name);
         pokemon.json().then( (poke) => { 
             setSkill( poke );
-            setImage( poke ); 
+            setImage( poke );
         });
     }
 });
@@ -18,6 +18,7 @@ search_icon.addEventListener('click', async (event) => {
     var pokemon = await getPokemon(pokemon_name);
     pokemon.json().then( (poke) => { 
         setSkill( poke );
+        setImage( poke );
     });
 }, false );
 
@@ -41,6 +42,38 @@ function setSkill( pokemon ) {
 function setImage( pokemon ) {
     document.getElementById("imagen-pokemon").src = pokemon.sprites.front_default;
 }
+var type = document.getElementById ("pokemon.type")
+function myFunction() {
+    document.getElementById("pokemon.mybutton").classList.toggle("type");
+  }
+
+/* filtro 1*/
+/* var filter = document.getElementById("filter");
+
+filter.onclick = function() {
+  var arreglo_muestra = [{
+    "name": "normal",
+    "name": "fighting",
+    "name": "dragon",
+    "name": "electric"
+  }];
+
+  var filterpokemon = getElementById(arreglo_muestra, "name");
+  console.log(filterpokemon);
+
+  var elDemo = document.getElementById("demo");
+  elDemo.innerHTML = "<pre>" + JSON.stringify(filterpokemon, null, 4) + "</pre>";
+
+};
+function getElementById(array,type, value) {
+    return array.filter(function(e) {
+      return e[name.type] == value;
+    });
+  } */
+
+
+
+
 /*Agarra entre 200 pokemones aleatoriamente 
 function consultpokemons() {
     let firstid = Math.round ( Math.random()* 200 )

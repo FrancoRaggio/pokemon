@@ -30,9 +30,18 @@
     </div>
 
     <div id="medio">
+        <!-- filtro2 -->
       <div id="derecha">
-        <h1 id="Texto-derecha"> Publicidad </h1>
+        <h1 id="Texto-derecha"> Filtros </h1>
+        <button type="submit" id="mybutton" onclick="myFunction()">
+          <ul id="myUL">
+            <li><a href="#">Tipos</a>
+            <li><a href="#">Colores</a></li>
+            <li><a href="#">Generos</a></li>
+          </ul>
+        </button>
       </div>
+
       <div class="showBox">
         <div class="casilleros">
           <h2 class="tipo"> Nombre: </h2>
@@ -40,6 +49,13 @@
           <h2 class="tipo"> Habilidad: </h2>
           <p class="texto" id="habilidad"></p>
           <img width="200" id="imagen-pokemon">
+          
+          <!-- filtro 1 -->
+<!--           <p>Presione el botón para obtener el pokemon filtrado por tipo:</p>
+          
+          <button id="filter">Filtrar Pokemon por tipo</button>
+          
+          <p id="demo"></p> -->
         </div>
       </div>
     </div>

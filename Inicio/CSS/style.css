@@ -65,23 +65,6 @@ input[type="search"]:focus{
   color: #000;
   background-color: #FFF;
 }
-/*
-input {
-  position:relative;
-  display:inline-block;
-  height: 100%;
-  border:none;
-  color: #666;
-  box-sizing: border-box;
-}
-
-#buscar {
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 50%;
-  height: 50%;
-  text-indent: 10px;
-} */
 #topnav a {
     float: left;
     display: block;
@@ -91,25 +74,6 @@ input {
     text-decoration: none;
     font-size: 17px;
   }
-/*#topnav .search-container {
-    float: right;
-  }
-/*#topnav input[type=text] {
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 17px;
-    border: none;
-  }
-/*#topnav .search-container button {
-    float: right;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-  } */
 
 #medio {
     width: 100%;
@@ -204,9 +168,35 @@ input {
 }
 
 .imagen-pokemon {
-  position: absolute;
+  position: flo
   top: 30%;
   left: 0%;
+}
+/* filtros */
+#mybutton {
+  width: 100%;
+  padding: 10px 12px ;
+  background-color: tomato;
+}
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid gray;
+  margin-top: 1px; 
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
 }
 
 @media screen and (max-width: 600px) {
