@@ -209,7 +209,6 @@
     left: 0%;
   }
 
-<<<<<<< HEAD
   #div-form {
     width: 80%;
     background-color: red;
@@ -267,24 +266,3 @@
       
     }
   }
-=======
-ul{
-    list-style-type: none;
-    margin: 50px;
-    padding:50px;
-    background-color: white;
-    text-align: center;
-}
-@media screen and (max-width: 768px) {
-    .container input {
-        width: 90%;
-    }   
-    .container textarea {
-        width: 90%;
-    }
-    .container .send-button {
-        position: relative;
-        left: 5%;
-    }
-}
->>>>>>> a273bf45642eb43db41555c6a5232e7c20d7c587
