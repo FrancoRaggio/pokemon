@@ -20,6 +20,7 @@ body {
     margin: 0px;
     color: rgb(255,255,255);
 }
+
 #cabecera img {
     width: 60%;
     margin: auto; 
@@ -77,30 +78,48 @@ input[type="search"]:focus{
 
 #medio {
     width: 100%;
-    height: 1000px;
+    display:flex;
+    
 }
 
+
+
+.filtro-form{
+  display:flex;
+  flex-direction: column;
+  
+}
+
+.margin-fil{
+  margin:1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+
 .showBox {
-    background-color:rgb(136, 0, 0);
     width: 100%;
     height: 100%;
-    padding: 0%;
-    margin: 0;
+
   }
   .casilleros {
-    background-color: rgb(182, 182, 182);
+    background: radial-gradient(#95ffa7, #42af42);    
     text-align: center;
-    width: 90%;
-    height: 90%;
     margin-top:0%;
     padding: 2%;
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    box-shadow: 5px 5px 25px #222 inset;  /* Sombra interior */
+    flex-wrap: wrap;
   }
+
   #quicks-h1 {
     display: inline-block;
   }
   .imga1 {
-    display:inline-block;
-    width: 200px;
+  
     text-align: center;
   }
   .tipo {
@@ -122,7 +141,56 @@ input[type="search"]:focus{
     background-color: gray;
   }
 
+#pokedex {
+  width:100%;
+}
 
+.card{
+  display: flex;
+  width: 25%;
+  margin: 1.8rem;
+  border-radius: 15px;
+  margin-left: 20px;
+  float: left;
+  background-color: rgb(129, 255, 129);
+  box-shadow: 5px 5px 25px rgb(9, 73, 0) inset;  /* Sombra interior */
+}
+
+#tipos{
+  background-color: rgb(180, 255, 180);
+
+}
+
+#filtros{
+  width: 20%;
+  background-color: rgb(79, 185, 79);
+}
+
+.cardSub{
+  margin:0;
+  font-family: helvetica;
+}
+
+.card-image{
+  background-color: rgb(85, 255, 85);
+  border-radius: 50px;
+  box-shadow: 5px 5px 25px #222 inset;  /* Sombra interior */
+
+}
+
+.card-title{
+  margin-top:5px;
+  font-family: Cambria;
+
+}
+.card-subtitle{
+  margin-left: 0px;
+}
+
+#boton-buscar{
+  width: 30%;
+  margin-left:15px;
+}
 
 .topnav {
   overflow: hidden;
@@ -218,3 +286,15 @@ input[type="search"]:focus{
     border: 1px solid #ccc;  
   }
 }
+  .casilleros {
+    background: radial-gradient(#95ffa7, #42af42);    
+    text-align: center;
+    margin-top:0%;
+    padding: 2%;
+    display:flex;
+    flex-direction: ;
+    align-content: center;
+    justify-content: center;
+    box-shadow: 5px 5px 25px #222 inset;  /* Sombra interior */
+    flex-wrap: wrap;
+  }
