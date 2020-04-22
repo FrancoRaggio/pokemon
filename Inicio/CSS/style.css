@@ -183,6 +183,10 @@ input[type="search"]:focus{
   font-family: Cambria;
 
 }
+
+.card-title::first-letter{
+    text-transform: uppercase;
+}
 .card-subtitle{
   margin-left: 0px;
 }
