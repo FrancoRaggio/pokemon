@@ -12,6 +12,40 @@ search_input.addEventListener("keydown", async (event) => {
     }
 });
 
+const fetchPokemon = () => {
+    const promises = [];
+    for (let i = 1; i <= 50; i++) {
+        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        promises.push(fetch(url).then((res) => res.json()));
+    }
+    Promise.all(promises).then((results) => {
+        const pokemon = results.map((result) => ({
+            name: result.name,
+            image: result.sprites['front_default'],
+            type: result.types.map((type) => type.type.name).join(', '),
+            id: result.id
+        })).sort((a, b) => a.type > b.type ? 1 : -1);
+        displayPokemon(pokemon);
+    });
+};
+const displayPokemon = (pokemon) => {
+    const pokemonHTMLString = pokemon
+        .map(
+            (pokeman) => `
+    <div class="card">
+        <img class="card-image" src="${pokeman.image}"/>
+        <div class="cardSub">
+        <h2 class="card-title"> ${pokeman.name}</h2>
+        <p class="card-subtitle">Tipo: ${pokeman.type}</p>
+        </div>
+    </div>
+`
+        )
+        .join('');
+    pokedex.innerHTML = pokemonHTMLString;
+};
+fetchPokemon();
+
 var search_icon = document.getElementById('search-button');
 search_icon.addEventListener('click', async (event) => {
     var pokemon_name = document.getElementById( 'search-input' ).value;
@@ -73,33 +107,61 @@ function setImage(pokemon){
         pokedex.innerHTML = pokemonHTMLString;
     };
     fetchPokemon();
-/* filtro 1*/
-/* var filter = document.getElementById("filter");
-
-filter.onclick = function() {
-  var arreglo_muestra = [{
-    "name": "normal",
-    "name": "fighting",
-    "name": "dragon",
-    "name": "electric"
-  }];
-
-  var filterpokemon = getElementById(arreglo_muestra, "name");
-  console.log(filterpokemon);
-
-  var elDemo = document.getElementById("demo");
-  elDemo.innerHTML = "<pre>" + JSON.stringify(filterpokemon, null, 4) + "</pre>";
-
-};
-function getElementById(array,type, value) {
-    return array.filter(function(e) {
-      return e[name.type] == value;
-    });
-  } */
-
-
-
-
+ 
+    function passvalues(clicked_id) {
+        var identificador=clicked_id;
+        let url =`https://pokeapi.co/api/v2/pokemon/`;
+        const api= new XMLHttpRequest();
+        api.open('GET', url, true);
+        api.send();
+        api.onreadystatechange=function() {
+            if(this.status == 200 && this.readyState == 4)
+            {
+                let pokemones=JSON.parse(this.responseText);
+                    let i=0;
+                        for(let uno of pokemones) {
+                            if (identificador ==uno.id) {
+                                localStorage.setItem("nombre",uno.name);
+                            }
+                        }
+            }
+        }
+    }
+    function loadTypes() {
+        let url =`https://pokeapi.co/api/v2/type`;
+        const api= new XMLHttpRequest();
+        api.open('GET', url, true);
+        api.send();
+        api.onreadystatechange=function() {
+            if(this.status == 200 && this.readyState == 4)
+            {
+                var res=JSON.parse(this.responseText);
+                grp = document.getElementById('tipos');
+                res.results.forEach(tipo =>{
+                opt = document.createElement('option');
+                opt.value = tipo.name;
+                opt.innerText = tipo.name;        
+                grp.appendChild(opt);
+                });
+                
+            }
+        }
+    }
+    
+    function findByTypes() {
+        let url ="https://pokeapi.co/api/v2/type/"+  document.getElementById('tipos').value +"/";
+        const api= new XMLHttpRequest();
+        api.open('GET', url, true);
+        api.send();
+        api.onreadystatechange=function() {
+            if(this.status == 200 && this.readyState == 4)
+            {
+                var res=JSON.parse(this.responseText);
+                console.log(res);
+                
+            }
+        }
+    }
 /*Agarra entre 200 pokemones aleatoriamente 
 function consultpokemons() {
     let firstid = Math.round ( Math.random()* 200 )

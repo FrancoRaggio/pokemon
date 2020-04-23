@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
-  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="buscador.css">
   <link rel="shortcut icon" href="../imagenes/favicon (1).png" type="image/x-icon">
   <title>Inicio</title>
 </head>
@@ -18,8 +18,8 @@
     </div>
 
     <div class="topnav">
-      <a class="button" href="#">Inicio</a>
-      <a class="button" href="../buscador/buscador.html">Buscador</a>
+      <a class="button" href="../Inicio/index.html">Inicio</a>
+      <a class="button" href="#">Buscador</a>
       <a class="button" href="../CompartiAmigo/comparti.html">Compartir</a>
       <a class="button" href="../ubicacion/ubicacion.html">Ubicacion</a>
       <div class="search-container">
@@ -28,29 +28,18 @@
           <button id="search-button"><i class="fa fa-search"></i></button>
         </div>
       </div>
-      </div>
     </div>
 
     <div id="medio">
-      <div id="filtros">
-        <h1 id="Texto-derecha"> Filtros </h1>
-        <form id="filtro" class="filtro-form">
-          <div class="margin-fil">
-            <label for="tipos">Tipo</label>
-            <select name="tipos" id="tipos">
-              <option id="opcion" value="" disabled selected>Seleccione un tipo</option>
-            </select>
-          </div>
-          <div class="margin-fil">
-            <label for="color">color</label>
-            <input id="color" name="color" type="color">
-          </div>
-          <button id="boton-buscar" onclick="findByTypes()">Filtrar</button>
-        </form>
-      </div>
-      <div class="showBox">        
-          <div id="pokedex" class="casilleros"></div>
-      </div>  
+      <div class="showBox">
+        <div class="casilleros">
+          <h2 class="tipo"> Nombre: </h2>
+          <p class="texto" id="poke"></p></br>
+          <h2 class="tipo"> Habilidad: </h2>
+          <p class="texto" id="habilidad"></p>
+          <img width="200" id="imagen-pokemon">
+        </div>
+      </div> 
     </div>
     <div id="footer">
       <h1>Nuestras redes</h1>
@@ -60,10 +49,4 @@
   <script src="../JS/script.JS"></script>
 </body>
 
-<!-- filtro 1 -->
-<!--           <p>Presione el botón para obtener el pokemon filtrado por tipo:</p>
-
-<button id="filter">Filtrar Pokemon por tipo</button>
-
-<p id="demo"></p> -->
 </html>
