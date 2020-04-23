@@ -19,6 +19,7 @@ body {
     height: 20%;
     margin: 0px;
     color: rgb(255,255,255);
+    text-align: center;
 }
 
 #cabecera img {
@@ -34,7 +35,9 @@ body {
     padding: auto;
     margin: auto;
   }
-
+  .topnav a span{
+    margin-right: 10px;
+  }
 #Texto-derecha {
   padding: 5%;
 }

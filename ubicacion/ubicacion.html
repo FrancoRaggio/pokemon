@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ubicacion</title>
-    <link rel="stylesheet" href="ubicacion.css">
-    <link rel="stylesheet" href="/librerias/fontawesome/css/all.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="/librerias/fontawesome/css/all.css">
+  <link rel="stylesheet" href="ubicacion.css">
+  <link rel="stylesheet" href="../icons/fonts.css">
+  <link rel="shortcut icon" href="./imagenes/favicon (1).png" type="image/x-icon">
+  <title>Sobre nosotros</title>
 </head>
-<body>
-    <header>
-        <div class="cabecera">
-            <img src="../imagenes/header.png">
+<body onload="loadTypes()">
+    <div id="contenedor">
+  
+        <div id="cabecera">
+          <img src="../imagenes/header2.png">
         </div>
-    </div>
-</header>
-<!-- menu -->
-<div class="menu">
-    <nav>
-        <li>
-            <a class="menu-link" href="../Inicio/index.html">Inicio</a>
-            <a class="menu-link" href="../CompartiAmigo/comparti.html">Compartir</a>
-            <a class="menu-link" href="#">Sobre nosotros</a>
-        </li>
-    </nav>
+        <div class="topnav">
+            <a class="button" href="../inicio/index.html"><span class="icon-home"></span>Inicio</a>
+            <a class="button" href="../pokemon/pokemon.html"><span class="icon-search"></span>Buscador</a>
+            <a class="button" href="../CompartiAmigo/comparti.html"><span class="icon-share2"></span>Compartir</a>
+            <a class="button" href="#"><span class="icon-users"></span>Sobre Nosotros</a>
+        </div>
 </div>
+<div class="casilleros">
+<div class="bloqueDatos">
+    <h1 id="titulo">¿Quienes Somos?</h1>
+    <p id="texto">
+    Somos estudiantes de Ingenieria en sistema de informacion de la Universidad Tecnologica Nacional FRLP.
+    Esta pagina web en formato movil fue creada con HTML,CSS y JavaScript para la catedra Aplicaciones moviles
+    con el objetivo de poder demostrar los conocimientos que tenemos de la materia en cuestion.
+    </p>
+</div>
+<div class="bloqueDatos">
+    <h1 id="titulo">¿Donde Estamos?</h1>
     <div class="mapa">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13085.388732687137!2d-57.9562555!3d-34.9228288!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8e5a62b28764b5ef!2sCatedral%20de%20La%20Plata!5e0!3m2!1ses!2sar!4v1586836894615!5m2!1ses!2sar" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13085.388732687137!2d-57.9562555!3d-34.9228288!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8e5a62b28764b5ef!2sCatedral%20de%20La%20Plata!5e0!3m2!1ses!2sar!4v1586836894615!5m2!1ses!2sar" width="600" height="450" frameborder="0" style="border:0"></iframe>
     </div>
+</div>
+    <div class="bloqueDatos">
+        <h1 id="titulo">¿Quienes Somos?</h1>
+        <p id="texto">
+        Somos estudiantes de Ingenieria en sistema de informacion de la Universidad Tecnologica Nacional FRLP.
+        Esta pagina web en formato movil fue creada con HTML,CSS y JavaScript para la catedra Aplicaciones moviles
+        con el objetivo de poder demostrar los conocimientos que tenemos de la materia en cuestion.
+        </p>
+    </div>
+</div>
+</div>
 </body>
 </html>
