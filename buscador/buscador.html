@@ -40,6 +40,7 @@
           <h2 class="tipo"> Habilidad: </h2>
           <p class="texto" id="habilidad"></p>
           <img width="200" id="imagen-pokemon">
+          <button id="compartir" onclick="compartir" type="button">Compartir</button>
         </div>
       </div> 
     </div>
@@ -48,6 +49,15 @@
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- boton compartir -->
+  <script type="text/javascript" >
+    $(document).ready(function () {
+      $('#compartir').click(function () {
+        window.location.href='../compartiAmigo/comparti.html';
+        })
+    });
+  </script>
+  
   <script src="../JS/script.JS"></script>
 </body>
 
