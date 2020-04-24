@@ -96,7 +96,6 @@ function setImage(pokemon){
             }
         }
     }
-
     function loadTypes() {
         let url =`https://pokeapi.co/api/v2/type`;
         const api= new XMLHttpRequest();
@@ -132,34 +131,6 @@ function setImage(pokemon){
             }
         }
     }
-
-/* filtro 1*/
-/* var filter = document.getElementById("filter");
-
-filter.onclick = function() {
-  var arreglo_muestra = [{
-    "name": "normal",
-    "name": "fighting",
-    "name": "dragon",
-    "name": "electric"
-  }];
-
-  var filterpokemon = getElementById(arreglo_muestra, "name");
-  console.log(filterpokemon);
-
-  var elDemo = document.getElementById("demo");
-  elDemo.innerHTML = "<pre>" + JSON.stringify(filterpokemon, null, 4) + "</pre>";
-
-};
-function getElementById(array,type, value) {
-    return array.filter(function(e) {
-      return e[name.type] == value;
-    });
-  } */
-
-
-
-
 /*Agarra entre 200 pokemones aleatoriamente 
 function consultpokemons() {
     let firstid = Math.round ( Math.random()* 200 )

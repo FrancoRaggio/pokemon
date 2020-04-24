@@ -14,7 +14,7 @@ body {
   padding: 0;
 }
 #cabecera {
-    background-color: rgb(179, 179, 179);
+    background-color: rgb(212, 212, 212);
     width: 100%;;
     height: 20%;
     margin: 0px;
@@ -76,6 +76,10 @@ input[type="search"]:focus{
     font-size: 17px;
   }
 
+  .topnav a span {
+    margin-right: 10px;
+  }
+  
 #medio {
     width: 100%;
     display:flex;
@@ -99,16 +103,21 @@ input[type="search"]:focus{
 
 .showBox {
     width: 100%;
-    height: 1000px;
+    height: 100%;
 
   }
   .casilleros {
-    background: radial-gradient(#95ffa7, #42af42);    
+    background:#dddddd;    
     text-align: center;
+    text-transform: capitalize;
     margin-top:0%;
     padding: 2%;
-    box-shadow: 5px 5px 25px #222 inset;  /* Sombra interior */
-    
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
+    flex-wrap: wrap;
   }
 
   #quicks-h1 {
@@ -118,7 +127,9 @@ input[type="search"]:focus{
   
     text-align: center;
   }
- 
+  .tipo {
+    display: inline;
+  }
 
   .texto {
     display: inline;
@@ -141,49 +152,52 @@ input[type="search"]:focus{
 
 .card{
   display: flex;
+  padding: 0.5rem;
   width: 25%;
   margin: 1.8rem;
-  border-radius: 15px;
+  border-radius: 35px 0px 35px 0px;
   margin-left: 20px;
   float: left;
-  background-color: rgb(129, 255, 129);
-  box-shadow: 5px 5px 25px rgb(9, 73, 0) inset;  /* Sombra interior */
+  background-color: rgb(184, 184, 184);
+  border: 2px solid #b1b1b1;
 }
 
 #tipos{
-  background-color: rgb(180, 255, 180);
+  background-color: white);
 
 }
 
 #filtros{
   width: 20%;
-  background-color: rgb(79, 185, 79);
+  background: #dddddd;    
+
 }
 
 .cardSub{
   margin:0;
   font-family: helvetica;
+  margin-left:10px;
 }
 
 .card-image{
-  background-color: rgb(85, 255, 85);
+  background-color: rgb(179, 179, 179);
   border-radius: 50px;
-  box-shadow: 5px 5px 25px #222 inset;  /* Sombra interior */
+  box-shadow: 5px 5px 25px rgb(134, 134, 134) inset;  /* Sombra interior */
 
-}
-
-#pokemon {
-  width: 40%;
-  background-color: rgb(136, 255, 136);
 }
 
 .card-title{
   margin-top:5px;
-  font-family: Cambria;
+  font-family: sans-serif;
+  color: rgb(71, 71, 71);
+}
 
+.card-title::first-letter{
+    text-transform: uppercase;
 }
 .card-subtitle{
   margin-left: 0px;
+  color: rgb(73, 72, 72);
 }
 
 #boton-buscar{

@@ -5,7 +5,6 @@
 }
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
   }
 #contenedor {
   width: 100%;
@@ -14,7 +13,7 @@ body {
   padding: 0;
 }
 #cabecera {
-    background-color: rgb(179, 179, 179);
+    background-color: rgb(212, 212, 212);
     width: 100%;;
     height: 20%;
     margin: 0px;
@@ -37,6 +36,8 @@ body {
 
 #Texto-derecha {
   padding: 5%;
+  color: rgb(73, 73, 73);
+  font-family: Helvetica;
 }
 
 #search-container {
@@ -76,6 +77,10 @@ input[type="search"]:focus{
     font-size: 17px;
   }
 
+  .topnav a span {
+    margin-right: 10px;
+  }
+  
 #medio {
     width: 100%;
     display:flex;
@@ -103,16 +108,17 @@ input[type="search"]:focus{
 
   }
   .casilleros {
-    background: radial-gradient(#95ffa7, #42af42);    
+    background:#dddddd;    
     text-align: center;
     text-transform: capitalize;
+    border-left: 5px solid rgb(179, 179, 179);
     margin-top:0%;
     padding: 2%;
     display:flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
-    box-shadow: 5px 5px 25px #222 inset;  /* Sombra interior */
+    box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
     flex-wrap: wrap;
   }
 
@@ -139,7 +145,7 @@ input[type="search"]:focus{
   #footer {
     width: 100%;
     height: 300px;
-    background-color: gray;
+    background-color: rgb(172, 172, 172);
   }
 
 #pokedex {
@@ -148,41 +154,46 @@ input[type="search"]:focus{
 
 .card{
   display: flex;
+  padding: 0.5rem;
   width: 25%;
   margin: 1.8rem;
-  border-radius: 15px;
+  border-radius: 35px 0px 35px 0px;
   margin-left: 20px;
   float: left;
-  background-color: rgb(129, 255, 129);
-  box-shadow: 5px 5px 25px rgb(9, 73, 0) inset;  /* Sombra interior */
+  background-color: rgb(184, 184, 184);
+  border: 2px solid #b1b1b1;
 }
 
 #tipos{
-  background-color: rgb(180, 255, 180);
+  background-color: white;
 
 }
 
 #filtros{
   width: 20%;
-  background-color: rgb(79, 185, 79);
+  background: #dddddd;    
+  box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
+
+
 }
 
 .cardSub{
   margin:0;
   font-family: helvetica;
+  margin-left:10px;
 }
 
 .card-image{
-  background-color: rgb(85, 255, 85);
+  background-color: rgb(179, 179, 179);
   border-radius: 50px;
-  box-shadow: 5px 5px 25px #222 inset;  /* Sombra interior */
-
+  box-shadow: 5px 5px 25px rgb(134, 134, 134) inset;  /* Sombra interior */
 }
 
 .card-title{
   margin-top:5px;
-  font-family: Cambria;
-
+  font-family: sans-serif;
+  color: rgb(46, 46, 46);
+  text-align: left;
 }
 
 .card-title::first-letter{
@@ -190,6 +201,8 @@ input[type="search"]:focus{
 }
 .card-subtitle{
   margin-left: 0px;
+  color: rgb(73, 72, 72);
+  text-align:left;
 }
 
 #boton-buscar{
@@ -291,15 +304,3 @@ input[type="search"]:focus{
     border: 1px solid #ccc;  
   }
 }
-  .casilleros {
-    background: radial-gradient(#95ffa7, #42af42);    
-    text-align: center;
-    margin-top:0%;
-    padding: 2%;
-    display:flex;
-    flex-direction: initial;
-    align-content: center;
-    justify-content: center;
-    box-shadow: 5px 5px 25px #222 inset;  /* Sombra interior */
-    flex-wrap: wrap;
-  }
