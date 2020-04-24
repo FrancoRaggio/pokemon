@@ -11,7 +11,6 @@ search_input.addEventListener("keydown", async (event) => {
         });
     }
 });
-
 const fetchPokemon = () => {
     const promises = [];
     for (let i = 1; i <= 50; i++) {
@@ -162,6 +161,11 @@ function setImage(pokemon){
             }
         }
     }
+
+
+
+
+    
 /*Agarra entre 200 pokemones aleatoriamente 
 function consultpokemons() {
     let firstid = Math.round ( Math.random()* 200 )

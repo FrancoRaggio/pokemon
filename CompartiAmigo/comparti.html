@@ -20,7 +20,11 @@
 
     <div class="topnav">
       <a class="button" href="../inicio/index.html"><span class="icon-home"></span>Inicio</a>
+<<<<<<< HEAD
       <a class="button" href="../pokemon/pokemon.html"><span class="icon-search"></span>Buscador</a>
+=======
+      <a class="button" href="../buscador/buscador.html"><span class="icon-search"></span>Buscador</a>
+>>>>>>> 3677ff4086c1089ae4895d857a343fd6c92bbd06
       <a class="button" href="#"><span class="icon-share2"></span>Compartir</a>
       <a class="button" href="../ubicacion/ubicacion.html"><span class="icon-users"></span>Sobre Nosotros</a>
       <div class="search-container">
@@ -30,25 +34,25 @@
         </div>
       </div>
     </div>
-
+    
     <div id="medio">
-
+      
       <!-- formulario -->
       <div id="div-form">
         <form id="form" method="post">
           <label>Email:</label>
-          <input class="input" id="email" type="text" name="email" required>
+          <input class="input" id="email1" type="text" name="email" required>
 
           <label>Email Destino:</label>
-          <input class="input" id="email" type="text" name="email" required>
-
+          <input class="input" id="email2" type="text" name="email" required>
+          
           <label>Nombre:</label>
           <input class="input" id="nombre" name="nombre" type="text">
 
           <label>Apellido:</label>
           <input class="input" id="apellido" name="apellido" type="text">
 
-          <input class="input" type="submit" value="Enviar">
+          <input class="input" type="submit" value="Enviar" id="enviar">
         </form>
       </div>
     </div>
@@ -57,6 +61,21 @@
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- validacion  -->
+  <script type="text/javascript" >
+    $(document).ready(function () {
+      $('#enviar').click(function (event) {
+        event.preventDefault();
+        let email1= $('#email1').val();
+        let email2= $('#email2').val();
+        let nombre= $('#nombre').val();
+        let apellido= $('#apellido').val();
+        if (email1.trim() == '' && email2.trim() == '' && nombre.trim() == '' && apellido.trim() == '') {
+          alert('Los campos son obligatorios');
+        };
+        });
+    });
+  </script>
   <script src="../JS/script.JS"></script>
 </body>
 

@@ -31,11 +31,11 @@
       </div>
       </div>
     </div>
-
+ 
     <div id="medio">
       <div id="filtros">
         <h1 id="Texto-derecha"> Filtros </h1>
-        <form id="filtro" class="filtro-form">
+        <div id="filtro" class="filtro-form">
           <div class="margin-fil">
             <label for="tipos">Tipo</label>
             <select name="tipos" id="tipos">
@@ -43,22 +43,32 @@
             </select>
           </div>
           <div class="margin-fil">
-            <label for="color">color</label>
-            <input id="color" name="color" type="color">
+            <label for="colores">Colores</label>
+            <select name="colores" id="colores">
+              <option id="opcion1" value="" disabled selected>Seleccione un color</option>
+            </select>
           </div>
-          <button id="boton-buscar" onclick="findByTypes()">Filtrar</button>
-        </form>
+          <div class="margin-fil">
+            <label for="Habitat">Habitat</label>
+            <select name="habitat" id="habitat">
+              <option id="opcion2" value="" disabled selected>Seleccione un habitat</option>
+            </select>
+          </div>
+          <button id="boton-buscar" onclick="filtrar()">Filtrar</button>
+        </div>
       </div>
       <div class="showBox">        
           <div id="pokedex" class="casilleros"></div>
-      </div>  
+          <button class="" id="sig" >Siguientes</button>
+      </div> 
+
     </div>
     <div id="footer">
       <h1>Nuestras redes</h1>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="../JS/script.JS"></script>
+  <script src="../JS/myjs.JS"></script>
 </body>
 
 <!-- filtro 1 -->

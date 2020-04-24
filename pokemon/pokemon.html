@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
-  <link rel="stylesheet" href="buscador.css">
   <link rel="stylesheet" href="pokemon.css">
   <link rel="stylesheet" href="../icons/fonts.css">
   <link rel="shortcut icon" href="../imagenes/favicon (1).png" type="image/x-icon">
@@ -33,37 +32,38 @@
     </div>
 
     <div id="medio">
+      <div id="filtros">
+        <h1 id="Texto-derecha"> Filtros </h1>
+        <form id="filtro" class="filtro-form">
+          <div class="margin-fil">
+            <label for="tipos">Tipo</label>
+            <select name="tipos" id="tipos">
+              <option id="opcion" value="" disabled selected>Seleccione un tipo</option>
+            </select>
+          </div>
+          <div class="margin-fil">
+            <label for="color">color</label>
+            <input id="color" name="color" type="color">
+          </div>
+          <button id="boton-buscar" onclick="findByTypes()">Buscar</button>
+        </form>
+      </div>
       <div class="showBox">
         <div class="casilleros">
-<<<<<<< HEAD
-          <div id="pokemon">
-
-          </div>
-=======
           <h2 class="tipo"> Nombre: </h2>
           <p class="texto" id="poke"></p></br>
           <h2 class="tipo"> Habilidad: </h2>
           <p class="texto" id="habilidad"></p>
           <img width="200" id="imagen-pokemon">
-          <button id="compartir" onclick="compartir" type="button">Compartir</button>
->>>>>>> 3677ff4086c1089ae4895d857a343fd6c92bbd06
         </div>
-      </div> 
+      </div>
+        <!-- filtro2 -->  
     </div>
     <div id="footer">
       <h1>Nuestras redes</h1>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <!-- boton compartir -->
-  <script type="text/javascript" >
-    $(document).ready(function () {
-      $('#compartir').click(function () {
-        window.location.href='../compartiAmigo/comparti.html';
-        })
-    });
-  </script>
-  
   <script src="../JS/script.JS"></script>
 </body>
 

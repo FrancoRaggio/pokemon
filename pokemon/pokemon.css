@@ -5,6 +5,7 @@
 }
 body {
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
   }
 #contenedor {
   width: 100%;
@@ -18,7 +19,6 @@ body {
     height: 20%;
     margin: 0px;
     color: rgb(255,255,255);
-    text-align: center;
 }
 
 #cabecera img {
@@ -26,7 +26,7 @@ body {
     margin: auto; 
 }
 
-.topnav {
+#topnav {
     overflow: hidden;
     width: 100%;
     height: 20%;
@@ -34,23 +34,9 @@ body {
     padding: auto;
     margin: auto;
   }
-  .topnav a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  .topnav a span{
-    margin-right: 10px;
-  }
 
 #Texto-derecha {
   padding: 5%;
-  color: rgb(73, 73, 73);
-  font-family: Helvetica;
 }
 
 #search-container {
@@ -61,6 +47,24 @@ body {
   left:50%;
   float:right;
   padding: 0.1em;
+}
+
+input[type="search"]{
+  width: 200px; /*ancho por defecto*/
+  background: #ededed url('../../imagenes/search-icon.png') no-repeat 9px center; /*icono lupa*/
+  padding: 9px 10px 9px 40px;
+  border-radius: 15em;
+  -webkit-transition: all .5s; /* transición de .5seg a todos los elementos para chrome*/
+  -moz-transition: all .5s; /* transición de .5seg a todos los elementos para mozilla*/
+  -o-transition: all .5s; /* transición de .5seg a todos los elementos para ophera*/
+  transition: all .5s; /* transición de .5seg a todos los elementos*/
+  outline: none; /* ocultar el fucos automático de los input */
+}
+input[type="search"]:focus{
+  width: 280px; /*tamaño del boton buscar al hacer click*/
+  padding-left: 32px; /*espacio entre el icono lupa y el placeholder*/
+  color: #000;
+  background-color: #FFF;
 }
 #topnav a {
     float: left;
@@ -106,7 +110,6 @@ body {
     background:#dddddd;    
     text-align: center;
     text-transform: capitalize;
-    border-left: 5px solid rgb(179, 179, 179);
     margin-top:0%;
     padding: 2%;
     display:flex;
@@ -140,7 +143,7 @@ body {
   #footer {
     width: 100%;
     height: 300px;
-    background-color: rgb(172, 172, 172);
+    background-color: gray;
   }
 
 #pokedex {
@@ -160,15 +163,13 @@ body {
 }
 
 #tipos{
-  background-color: white;
+  background-color: white);
 
 }
 
 #filtros{
   width: 20%;
   background: #dddddd;    
-  box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
-
 
 }
 
@@ -182,13 +183,13 @@ body {
   background-color: rgb(179, 179, 179);
   border-radius: 50px;
   box-shadow: 5px 5px 25px rgb(134, 134, 134) inset;  /* Sombra interior */
+
 }
 
 .card-title{
   margin-top:5px;
   font-family: sans-serif;
-  color: rgb(46, 46, 46);
-  text-align: left;
+  color: rgb(71, 71, 71);
 }
 
 .card-title::first-letter{
@@ -197,7 +198,6 @@ body {
 .card-subtitle{
   margin-left: 0px;
   color: rgb(73, 72, 72);
-  text-align:left;
 }
 
 #boton-buscar{
