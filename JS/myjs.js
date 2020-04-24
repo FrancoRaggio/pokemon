@@ -61,17 +61,21 @@ function mostrar(data){
     data.pokemon.forEach(pokemon =>{
       pedirApi(pokemon.pokemon.url, mostrarPokemon)
     });
-    document.getElementById('sig').addEventListener("click", function() {
-      siguiente(data.next);
-    });
+  }
+
+  function mostrarPokemonSpecie(data){
+    pedirApi(data.varieties[0].pokemon.url, mostrarPokemon)
   }
 
   function mostrarPorColor(data){
     data.pokemon_species.forEach(pokemon =>{
-      pedirApi(pokemon.url, mostrarPokemon)
+      pedirApi(pokemon.url, mostrarPokemonSpecie)
     });
-    document.getElementById('sig').addEventListener("click", function() {
-      siguiente(data.next);
+  }
+
+  function mostrarporHabitat(data) {
+    data.pokemon_species.ForEach(pokemon =>{
+      pedirApi(pokemon.url, mostrarPokemonSpecie)
     });
   }
 
@@ -120,17 +124,54 @@ function loadTypes() {
   }
 
 
+  let url3 =`https://pokeapi.co/api/v2/pokemon-habitat/`;
+  const api3= new XMLHttpRequest();
+  api3.open('GET', url3, true);
+  api3.send();
+  api3.onreadystatechange=function() {
+      if(this.status == 200 && this.readyState == 4)
+      {
+          var res=JSON.parse(this.responseText);
+          grp = document.getElementById('habitat');
+          res.results.forEach(tipo =>{
+          opt = document.createElement('option');
+          opt.value = tipo.name;
+          opt.innerText = tipo.name;        
+          grp.appendChild(opt);
+          });
+          
+      }
+  }
+
+
 }
 
 
 function findByTypes() {
-  document.getElementById('pokedex').innerHTML = " ";
+  
   pedirApi("https://pokeapi.co/api/v2/type/"+ document.getElementById('tipos').value +"/", mostrarPorTipo);
 }
 
 function findByColors() {
-  document.getElementById('pokedex').innerHTML = " ";
   pedirApi("https://pokeapi.co/api/v2/pokemon-color/"+ document.getElementById('colores').value +"/", mostrarPorColor);
+}
+
+function findByHabitat() {
+  pedirApi("https://pokeapi.co/api/v2/pokemon-habitat/"+ document.getElementById('habitat').value +"/", mostrarporHabitat);
+
+}
+
+function filtrar(){
+  document.getElementById('pokedex').innerHTML = " ";
+  if (document.getElementById('tipos').value != " ") {
+    findByTypes();
+  }
+  if (document.getElementById('colores').value != " ") {
+    findByColors();
+  }
+  if (document.getElementById('habitat').value != " ") {
+    findByHabitat();
+  }
 }
 
   pedirApi("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=5", mostrar)

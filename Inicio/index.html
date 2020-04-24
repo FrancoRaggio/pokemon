@@ -20,11 +20,7 @@
 
     <div class="topnav">
       <a class="button" href="#"><span class="icon-home"></span>Inicio</a>
-<<<<<<< HEAD
-      <a class="button" href="../pokemon/pokemon.html"><span class="icon-search"></span>Buscador</a>
-=======
       <a class="button" href="../buscador/buscador.html"><span class="icon-search"></span>Buscador</a>
->>>>>>> 3677ff4086c1089ae4895d857a343fd6c92bbd06
       <a class="button" href="../CompartiAmigo/comparti.html"><span class="icon-share2"></span>Compartir</a>
       <a class="button" href="../ubicacion/ubicacion.html"><span class="icon-users"></span>Sobre Nosotros</a>
       <div class="search-container">
@@ -47,12 +43,18 @@
             </select>
           </div>
           <div class="margin-fil">
+            <label for="colores">Colores</label>
             <select name="colores" id="colores">
               <option id="opcion1" value="" disabled selected>Seleccione un color</option>
             </select>
           </div>
-          <button id="boton-buscar" onclick="findByTypes()">Filtrar</button>
-          <button id="boton-buscar" onclick="findByColors()">Filtrar</button>
+          <div class="margin-fil">
+            <label for="Habitat">Habitat</label>
+            <select name="habitat" id="habitat">
+              <option id="opcion2" value="" disabled selected>Seleccione un habitat</option>
+            </select>
+          </div>
+          <button id="boton-buscar" onclick="filtrar()">Filtrar</button>
         </div>
       </div>
       <div class="showBox">        
