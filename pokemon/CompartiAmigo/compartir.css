@@ -253,12 +253,13 @@ body {
   }
   
   @media screen and (max-width:600px) {
+
     #div-form {
       width: 80%;
       display: flex;
       justify-content: center;
       margin:25px;
-      
+      padding-left: 30px;     
     }
     #form {
       width: 800px;
