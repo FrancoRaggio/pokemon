@@ -130,9 +130,16 @@ function setImage(pokemon){
             }
         }
     }
-
-
-
+function mostrarhistoial() {
+    if (typeof(Storage) !== "undefined") {
+        console.log('funciona');
+        // LocalStorage disponible
+        } else {
+        // LocalStorage no soportado en este navegador
+        }
+        
+}
+mostrarhistoial();
 
     
 /*Agarra entre 200 pokemones aleatoriamente 
