@@ -83,6 +83,12 @@ body {
   .topnav .search-container button:hover {
     background: #ccc;
   }
+
+  .casilleros{
+    background:#dddddd; 
+    box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
+   
+  }
   
   @media screen and (max-width: 600px) {
     .topnav .search-container {
@@ -116,6 +122,7 @@ body {
     background-color: rgb(255, 255, 255);
     border-radius: 0.5cm;
     color: rgb(129, 129, 129);
+    margin:2%;
   }
   @media screen and (max-width: 600px) {
     .mapa {
@@ -155,7 +162,7 @@ body {
       }
       .bloqueDatos {
         align-content: center;
-        margin: 10px;
+        margin: 0;
       }
       footer{
         background: #202020;

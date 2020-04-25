@@ -180,13 +180,32 @@ function filtrar(){
     document.getElementById("filtros").style.width = "300px";
     document.getElementById("casilleros").style.marginLeft = "300px";
     document.getElementById("abrir").style.display = "none";
-    document.getElementById("cerrar").style.display = "inline";
+    document.getElementById("abrir").style.display = "inline";
 }
 
 function ocultar() {
     document.getElementById("filtros").style.width = "0";
     document.getElementById("casilleros").style.marginLeft = "0";
     document.getElementById("abrir").style.display = "inline";
-    document.getElementById("cerrar").style.display = "none";
+    document.getElementById("abrir").style.display = "none";
 }
- 
+ /*
+function verhistorial(clicked_id){
+  var identificador=clicked_id;
+  let url=`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=30`;
+  const api= new XMLHttpRequest();
+  api.open('GET', url, true);
+  api.send();
+  api.onreadystatechange = function() {
+    if(this.status==200 && this.readyState==4)
+      {
+        let pokemones=JSON.parse(this.responseText);
+          let i=0;
+            for(let uno of pokemones) {
+              if (identificador == uno.id) {
+                localStorage.setItem("nombre", uno.name);
+              }
+            }
+      }
+  }
+}
