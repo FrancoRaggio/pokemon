@@ -74,38 +74,6 @@ function setSkill( pokemon ) {
 function setImage(pokemon){
     document.getElementById("imagen-pokemon").src=pokemon.sprites.front_default;
 }
- const fetchPokemon = () => {
-        const promises = [];
-        for (let i = 1; i <= 6; i++) {
-            const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-            promises.push(fetch(url).then((res) => res.json()));
-        }
-        Promise.all(promises).then((results) => {
-            const pokemon = results.map((result) => ({
-                name: result.name,
-                image: result.sprites['front_default'],
-                type: result.types.map((type) => type.type.name).join(', '),
-                id: result.id
-            })).sort((a, b) => a.type > b.type ? 1 : -1);
-            displayPokemon(pokemon);
-        });
-    };
-    const displayPokemon = (pokemon) => {
-        const pokemonHTMLString = pokemon
-            .map(
-                (pokeman) => 
-            `
-        <li class="card">
-            <img class="card-image" src="${pokeman.image}"/>
-            <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
-            <p class="card-subtitle">Type: ${pokeman.type}</p>
-        </li>
-    `
-            )
-            .join('');
-        pokedex.innerHTML = pokemonHTMLString;
-    };
-    fetchPokemon();
  
     function passvalues(clicked_id) {
         var identificador=clicked_id;
@@ -113,6 +81,7 @@ function setImage(pokemon){
         const api= new XMLHttpRequest();
         api.open('GET', url, true);
         api.send();
+
         api.onreadystatechange=function() {
             if(this.status == 200 && this.readyState == 4)
             {

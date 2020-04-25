@@ -26,18 +26,6 @@ body {
     margin: auto; 
 }
 
-#topnav {
-    overflow: hidden;
-    width: 100%;
-    height: 20%;
-    background-color: #cccccc;
-    padding: auto;
-    margin: auto;
-  }
-
-#Texto-derecha {
-  padding: 5%;
-}
 
 #search-container {
   padding-top:5%;
@@ -66,16 +54,6 @@ input[type="search"]:focus{
   color: #000;
   background-color: #FFF;
 }
-#topnav a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-
   .topnav a span {
     margin-right: 10px;
   }
@@ -85,22 +63,6 @@ input[type="search"]:focus{
     display:flex;
     
 }
-
-
-
-.filtro-form{
-  display:flex;
-  flex-direction: column;
-  
-}
-
-.margin-fil{
-  margin:1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-
 .showBox {
     width: 100%;
     height: 100%;
@@ -120,13 +82,6 @@ input[type="search"]:focus{
     flex-wrap: wrap;
   }
 
-  #quicks-h1 {
-    display: inline-block;
-  }
-  .imga1 {
-  
-    text-align: center;
-  }
   .tipo {
     display: inline;
   }
@@ -134,71 +89,12 @@ input[type="search"]:focus{
   .texto {
     display: inline;
   }
-  #derecha {
-    float:right;
-    width: 20%;
-    height: 1000px;
-    background-color: rgb(100, 100, 100);
-  }
+
   #footer {
     width: 100%;
     height: 300px;
     background-color: gray;
   }
-
-#pokedex {
-  width:100%;
-}
-
-.card{
-  display: flex;
-  padding: 0.5rem;
-  width: 25%;
-  margin: 1.8rem;
-  border-radius: 35px 0px 35px 0px;
-  margin-left: 20px;
-  float: left;
-  background-color: rgb(184, 184, 184);
-  border: 2px solid #b1b1b1;
-}
-
-#tipos{
-  background-color: white);
-
-}
-
-#filtros{
-  width: 20%;
-  background: #dddddd;    
-
-}
-
-.cardSub{
-  margin:0;
-  font-family: helvetica;
-  margin-left:10px;
-}
-
-.card-image{
-  background-color: rgb(179, 179, 179);
-  border-radius: 50px;
-  box-shadow: 5px 5px 25px rgb(134, 134, 134) inset;  /* Sombra interior */
-
-}
-
-.card-title{
-  margin-top:5px;
-  font-family: sans-serif;
-  color: rgb(71, 71, 71);
-}
-
-.card-title::first-letter{
-    text-transform: uppercase;
-}
-.card-subtitle{
-  margin-left: 0px;
-  color: rgb(73, 72, 72);
-}
 
 #boton-buscar{
   width: 30%;
@@ -255,34 +151,6 @@ input[type="search"]:focus{
 .topnav .search-container button:hover {
   background: #ccc;
 }
-
-/* filtros */
-#mybutton {
-  width: 100%;
-  padding: 10px 12px ;
-  background-color: tomato;
-}
-#myUL {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-#myUL li a {
-  border: 1px solid gray;
-  margin-top: 1px; 
-  background-color: #f6f6f6;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block
-}
-
-#myUL li a:hover:not(.header) {
-  background-color: #eee;
-}
-
 @media screen and (max-width: 600px) {
   .topnav .search-container {
     float: none;

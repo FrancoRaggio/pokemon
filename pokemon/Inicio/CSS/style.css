@@ -34,15 +34,7 @@ body {
     padding: auto;
     margin: auto;
   }
-  .topnav a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
+
   .topnav a span{
     margin-right: 10px;
   }
@@ -62,16 +54,6 @@ body {
   float:right;
   padding: 0.1em;
 }
-#topnav a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-
   .topnav a span {
     margin-right: 10px;
   }
@@ -81,8 +63,6 @@ body {
     display:flex;
     
 }
-
-
 
 .filtro-form{
   display:flex;
@@ -117,13 +97,6 @@ body {
     flex-wrap: wrap;
   }
 
-  #quicks-h1 {
-    display: inline-block;
-  }
-  .imga1 {
-  
-    text-align: center;
-  }
   .tipo {
     display: inline;
   }
@@ -205,11 +178,6 @@ body {
   margin-left:15px;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: #e9e9e9;
-}
-
 .topnav a {
   float: left;
   display: block;
@@ -254,33 +222,6 @@ body {
 
 .topnav .search-container button:hover {
   background: #ccc;
-}
-
-/* filtros */
-#mybutton {
-  width: 100%;
-  padding: 10px 12px ;
-  background-color: tomato;
-}
-#myUL {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-#myUL li a {
-  border: 1px solid gray;
-  margin-top: 1px; 
-  background-color: #f6f6f6;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block
-}
-
-#myUL li a:hover:not(.header) {
-  background-color: #eee;
 }
 
 @media screen and (max-width: 600px) {

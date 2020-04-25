@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
-  <link rel="stylesheet" href="pokemon.css">
-  <link rel="stylesheet" href="../icons/fonts.css">
+  <link rel="stylesheet" href="./CSS/style.css">
   <link rel="shortcut icon" href="../imagenes/favicon (1).png" type="image/x-icon">
+  <link rel="stylesheet" href="../icons/fonts.css">
   <title>Inicio</title>
 </head>
 
@@ -19,8 +19,8 @@
     </div>
 
     <div class="topnav">
-      <a class="button" href="../inicio/index.html"><span class="icon-home"></span>Inicio</a>
-      <a class="button" href="#"><span class="icon-search"></span>Buscador</a>
+      <a class="button" href="#"><span class="icon-home"></span>Inicio</a>
+      <a class="button" href="../buscador/buscador.html"><span class="icon-search"></span>Buscador</a>
       <a class="button" href="../CompartiAmigo/comparti.html"><span class="icon-share2"></span>Compartir</a>
       <a class="button" href="../ubicacion/ubicacion.html"><span class="icon-users"></span>Sobre Nosotros</a>
       <div class="search-container">
@@ -29,12 +29,13 @@
           <button id="search-button"><i class="fa fa-search"></i></button>
         </div>
       </div>
+      </div>
     </div>
-
+ 
     <div id="medio">
       <div id="filtros">
         <h1 id="Texto-derecha"> Filtros </h1>
-        <form id="filtro" class="filtro-form">
+        <div id="filtro" class="filtro-form">
           <div class="margin-fil">
             <label for="tipos">Tipo</label>
             <select name="tipos" id="tipos">
@@ -42,29 +43,32 @@
             </select>
           </div>
           <div class="margin-fil">
-            <label for="color">color</label>
-            <input id="color" name="color" type="color">
+            <label for="colores">Colores</label>
+            <select name="colores" id="colores">
+              <option id="opcion1" value="" disabled selected>Seleccione un color</option>
+            </select>
           </div>
-          <button id="boton-buscar" onclick="findByTypes()">Buscar</button>
-        </form>
-      </div>
-      <div class="showBox">
-        <div class="casilleros">
-          <h2 class="tipo"> Nombre: </h2>
-          <p class="texto" id="poke"></p></br>
-          <h2 class="tipo"> Habilidad: </h2>
-          <p class="texto" id="habilidad"></p>
-          <img width="200" id="imagen-pokemon">
+          <div class="margin-fil">
+            <label for="Habitat">Habitat</label>
+            <select name="habitat" id="habitat">
+              <option id="opcion2" value="" disabled selected>Seleccione un habitat</option>
+            </select>
+          </div>
+          <button id="boton-buscar" onclick="filtrar()">Filtrar</button>
         </div>
       </div>
-        <!-- filtro2 -->  
+      <div class="showBox">        
+          <div id="pokedex" class="casilleros"></div>
+          <button class="" id="sig" >Siguientes</button>
+      </div> 
+
     </div>
     <div id="footer">
       <h1>Nuestras redes</h1>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="../JS/script.JS"></script>
+  <script src="../JS/myjs.JS"></script>
 </body>
 
 </html>
