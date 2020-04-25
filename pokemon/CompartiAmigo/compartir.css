@@ -252,7 +252,25 @@ body {
     justify-content: space-between;
   }
   
-  @media screen and (max-width:700px) {
+  @media screen and (max-width:600px) {
+
+    #div-form {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      margin:25px;
+      padding-left: 30px;     
+    }
+    #form {
+      width: 800px;
+      widows: 40px;
+      border:1px solid #ccc;
+      margin: auto;
+     padding-right: 50px;
+    padding-bottom: 20px;
+      background-color: white;
+  }
+
     .container-body{
       display: block;
     }
