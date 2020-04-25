@@ -107,6 +107,7 @@ input[type="search"]:focus{
 }
 
 .topnav a {
+  font-family: Helvetica;
   float: left;
   display: block;
   color: black;
