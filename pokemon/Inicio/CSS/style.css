@@ -13,7 +13,7 @@ body {
   padding: 0;
 }
 #cabecera {
-    background-color:  rgb(99, 97, 97);
+    background-color:  rgb(172, 172, 172);
     width: 100%;;
     height: 20%;
     margin: 0px;
@@ -39,6 +39,10 @@ body {
     margin-right: 10px;
   }
 
+  .topnav a {
+    font-family: Helvetica;
+  }
+
 #Texto-derecha {
   padding: 5%;
   color: rgb(73, 73, 73);
@@ -54,9 +58,6 @@ body {
   float:right;
   padding: 0.1em;
 }
-  .topnav a span {
-    margin-right: 10px;
-  }
   
 #medio {
     width: 100%;
@@ -97,6 +98,11 @@ body {
     flex-wrap: wrap;
   }
 
+  #sig{
+    margin-left: 2%;
+    margin-bottom: 2%;
+      }
+
   .tipo {
     display: inline;
   }
@@ -112,6 +118,7 @@ body {
   }
 #pokedex {
   width:100%;
+  height: 100%;
 }
 
 .card{
@@ -135,7 +142,7 @@ body {
   width: 20%;
   background: #dddddd;    
   box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
-
+  font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -236,6 +243,7 @@ body {
 }
 
 footer{
+  font-family: Arial, Helvetica, sans-serif;
   background: #202020;
   color: white;
   width: 100%;
