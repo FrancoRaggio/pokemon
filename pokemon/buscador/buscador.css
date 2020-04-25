@@ -5,7 +5,6 @@
 }
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
   }
 #contenedor {
   width: 100%;
@@ -14,11 +13,12 @@ body {
   padding: 0;
 }
 #cabecera {
-    background-color: rgb(212, 212, 212);
-    width: 100%;;
+  background-color:  rgb(172, 172, 172);
+  width: 100%;;
     height: 20%;
     margin: 0px;
     color: rgb(255,255,255);
+    text-align: center;
 }
 
 #cabecera img {
@@ -26,7 +26,64 @@ body {
     margin: auto; 
 }
 
+.topnav {
+    overflow: hidden;
+    width: 100%;
+    height: 20%;
+    background-color: #cccccc;
+    padding: auto;
+    margin: auto;
+  }
 
+  .topnav a span{
+    margin-right: 10px;
+  }
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .topnav .search-container {
+    float: right;
+  }
+  
+  .topnav input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+  }
+  
+  .topnav .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .topnav .search-container button:hover {
+    background: #ccc;
+  }
+  
 #search-container {
   padding-top:5%;
   width: 30%;
@@ -53,15 +110,6 @@ input[type="search"]:focus{
   padding-left: 32px; /*espacio entre el icono lupa y el placeholder*/
   color: #000;
   background-color: #FFF;
-}
-  .topnav a span {
-    margin-right: 10px;
-  }
-  
-#medio {
-    width: 100%;
-    display:flex;
-    
 }
 .showBox {
     width: 100%;
@@ -166,5 +214,110 @@ input[type="search"]:focus{
   }
   .topnav input[type=text] {
     border: 1px solid #ccc;  
+  }
+}
+
+footer{
+  background: #202020;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+.container-footer-all{
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px;
+}
+.container-body{
+  display:flex;
+  justify-content: space-between;
+}
+.colum1{
+  width: 100%;
+  max-width: 400px ;
+}
+.colum1 h1 {
+  font-size: 22px;
+}
+.colum1 p{
+  font-size: 14px;
+  color: #c7c7c7;
+  margin-top: 10px;
+}
+.colum2 {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 24px ;
+  margin-left: 24px;
+}
+.colum2 h1 {
+  font-size: 22px;
+
+}
+.colum2 .fila {
+  margin-top: 20px;
+  display: flex;
+}
+.colum3{
+  max-width: 400px;
+  text-align: center;
+}
+.colum3 img{
+  width: 250px;
+  height: 250px;
+}
+.fila img{
+  width:36px;
+  height: 36px;
+}
+.fila label{
+  margin-top: 10px;
+  margin-left: 20px;
+  color: #c7c7c7;
+}
+.container-footer{
+  width: 100%;
+  background: #101010;
+  display:flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+.copyright {
+  color: #c7c7c7;
+}
+.footer {
+  margin:center;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width:700px) {
+  .container-body{
+    display: block;
+  }
+  .colum1{
+    max-width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+  .colum2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left:auto;
+    margin-right: auto;
+  }
+  .colum2 .fila{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  footer{
+    text-align: center;
+  }
+  .colum3 {
+    display: none;
   }
 }
