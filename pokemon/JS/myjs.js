@@ -1,3 +1,16 @@
+var search_input = document.getElementById('search-input');
+search_input.addEventListener("keydown", async (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        var pokemon_name = document.getElementById( 'search-input' ).value;
+        var pokemon = await getPokemon( pokemon_name);
+        pokemon.json().then( (poke) => { 
+            setSkill( poke );
+            setImage( poke );
+        });
+    }
+});
+
 function checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
       return Promise.resolve(response)
@@ -189,7 +202,7 @@ function ocultar() {
     document.getElementById("abrir").style.display = "inline";
     document.getElementById("abrir").style.display = "none";
 }
- /*
+
 function verhistorial(clicked_id){
   var identificador=clicked_id;
   let url=`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=30`;
@@ -197,6 +210,7 @@ function verhistorial(clicked_id){
   api.open('GET', url, true);
   api.send();
   api.onreadystatechange = function() {
+    document.getElementById('search-button').addEventListener('click', getText, true);
     if(this.status==200 && this.readyState==4)
       {
         let pokemones=JSON.parse(this.responseText);
