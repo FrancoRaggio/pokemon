@@ -41,6 +41,9 @@ function mostrarPokemon(pokemon){
     grp = document.getElementById('pokedex');
     var d1 = document.createElement('div');
     d1.className = "card";
+    var color = document.createElement('div');
+    color.className = "cardSub"
+    color.innerText=
     var img = document.createElement('img');
     img.className= "card-image";
     img.src=pokemon.sprites['front_default'];
@@ -58,6 +61,7 @@ function mostrarPokemon(pokemon){
     d1.appendChild(img);
     d1.appendChild(d2);
     grp.appendChild(d1);
+    d2.appendChild(color);
   }
 
 
