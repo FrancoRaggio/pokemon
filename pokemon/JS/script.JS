@@ -1,3 +1,29 @@
+function obtener_localstorage() {
+    if (JSON.parse(localStorage.getItem("nombre")) ) {
+        // se que existe el obejeto en el localstorage 
+        // let nombre = JSON.parse(localStorage.getItem("nombre"));
+        // var nombredelpoke = nombre.name;
+        // var todoshistorial= [];
+        // var todoshistorial = todoshistorial + nombredelpoke + ';';
+        //  document.getElementById("historial").innerHTML = todoshistorial;
+         Storage.prototype.setObj = function(nombre, poke) {
+            return this.setItem(key, JSON.stringify(poke))
+        }
+        Storage.prototype.getObj = function(key) {
+            return JSON.parse(this.getItem(key))
+        }
+         for (var i = 0; i < localStorage.length; i++) console.log( localStorage.key(i) +" has value " + localStorage[localStorage.key(i)] )
+    }else {
+        console.log("no hay entradas en el local storage");
+    }
+   
+}
+obtener_localstorage();
+
+
+
+
+
 
 var search_input = document.getElementById('search-input');
 search_input.addEventListener("keydown", async (event) => {
@@ -8,6 +34,13 @@ search_input.addEventListener("keydown", async (event) => {
         pokemon.json().then( (poke) => { 
             setSkill( poke );
             setImage( poke );
+            localStorage.setItem("nombre",JSON.stringify(poke));
+           
+/*            var nombreepokemon =(poke.name)
+            localStorage.nombrepokemon= nombreepokemon
+            lastName = localStorage.nombrepokemon */
+/*   
+            document.getElementById("historial").innerHTML = historys; */ 
         });
     }
 });
