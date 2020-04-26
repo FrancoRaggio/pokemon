@@ -1,29 +1,3 @@
-function obtener_localstorage() {
-    if (JSON.parse(localStorage.getItem("nombre")) ) {
-        // se que existe el obejeto en el localstorage 
-        // let nombre = JSON.parse(localStorage.getItem("nombre"));
-        // var nombredelpoke = nombre.name;
-        // var todoshistorial= [];
-        // var todoshistorial = todoshistorial + nombredelpoke + ';';
-        //  document.getElementById("historial").innerHTML = todoshistorial;
-         Storage.prototype.setObj = function(nombre, poke) {
-            return this.setItem(key, JSON.stringify(poke))
-        }
-        Storage.prototype.getObj = function(key) {
-            return JSON.parse(this.getItem(key))
-        }
-         for (var i = 0; i < localStorage.length; i++) console.log( localStorage.key(i) +" has value " + localStorage[localStorage.key(i)] )
-    }else {
-        console.log("no hay entradas en el local storage");
-    }
-   
-}
-obtener_localstorage();
-
-
-
-
-
 
 var search_input = document.getElementById('search-input');
 search_input.addEventListener("keydown", async (event) => {
@@ -34,19 +8,34 @@ search_input.addEventListener("keydown", async (event) => {
         pokemon.json().then( (poke) => { 
             setSkill( poke );
             setImage( poke );
-            localStorage.setItem("nombre",JSON.stringify(poke));
-           
-/*            var nombreepokemon =(poke.name)
-            localStorage.nombrepokemon= nombreepokemon
-            lastName = localStorage.nombrepokemon */
-/*   
-            document.getElementById("historial").innerHTML = historys; */ 
+            var arreglo_de_pokemones = JSON.parse(localStorage.getItem("pokemones"));
+            if ( !arreglo_de_pokemones )  {
+                arreglo_de_pokemones = [ ];
+            }  
+            arreglo_de_pokemones.push ( poke );
+            localStorage.setItem( "pokemones", JSON.stringify( arreglo_de_pokemones ));
+            var arreglo_nombres = [ ];
+            for ( var pokemon of arreglo_de_pokemones ) {
+                arreglo_nombres.push( pokemon.name );
+            }
+            var primeros_10_pokemones = arreglo_de_pokemones.slice( 0, 9 );
+
+            var arreglo_nombres = [ ];
+            for ( var pokemon of primeros_10_pokemones ) {
+                arreglo_nombres .push( pokemon.name );
+                if (arreglo_nombres.length>9){
+                    arreglo_nombres.remove(arreglo_nombres.length-2);
+                }
+                
+                document.getElementById("historial").innerHTML = arreglo_nombres;
+            }
+            
         });
     }
 });
 const fetchPokemon = () => {
     const promises = [];
-    for (let i = 1; i <= 50; i++) {
+    for (let i = 1; i <= 500; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then((res) => res.json()));
     }
