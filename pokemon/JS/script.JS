@@ -8,34 +8,12 @@ search_input.addEventListener("keydown", async (event) => {
         pokemon.json().then( (poke) => { 
             setSkill( poke );
             setImage( poke );
-            var arreglo_de_pokemones = JSON.parse(localStorage.getItem("pokemones"));
-            if ( !arreglo_de_pokemones )  {
-                arreglo_de_pokemones = [ ];
-            }  
-            arreglo_de_pokemones.push ( poke );
-            localStorage.setItem( "pokemones", JSON.stringify( arreglo_de_pokemones ));
-            var arreglo_nombres = [ ];
-            for ( var pokemon of arreglo_de_pokemones ) {
-                arreglo_nombres.push( pokemon.name );
-            }
-            var primeros_10_pokemones = arreglo_de_pokemones.slice( 0, 9 );
-
-            var arreglo_nombres = [ ];
-            for ( var pokemon of primeros_10_pokemones ) {
-                arreglo_nombres .push( pokemon.name );
-                if (arreglo_nombres.length>9){
-                    arreglo_nombres.remove(arreglo_nombres.length-2);
-                }
-                
-                document.getElementById("historial").innerHTML = arreglo_nombres;
-            }
-            
         });
     }
 });
 const fetchPokemon = () => {
     const promises = [];
-    for (let i = 1; i <= 500; i++) {
+    for (let i = 1; i <= 50; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then((res) => res.json()));
     }

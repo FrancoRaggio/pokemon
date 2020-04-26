@@ -53,8 +53,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function () {
-      $('#enviar').click(function (event) {
-        event.preventDefault();
+      $('#enviar').click(function () {
         let email1= $('#email1').val();
         let email2= $('#email2').val();
         let nombre= $('#nombre').val();
@@ -66,8 +65,7 @@
           position: 'center',
           icon: 'success',
           title: 'Email Enviado con exito ',
-          showConfirmButton: true,   
-              
+          showConfirmButton: true,        
           });                 
         }
       });
