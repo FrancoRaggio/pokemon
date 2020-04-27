@@ -1,3 +1,8 @@
+var all = new Array();
+var fil1 = new Array();
+var fil2 = new Array();
+var fil3 = new Array();
+
 var search_input = document.getElementById('search-input');
 search_input.addEventListener("keydown", async (event) => {
     if (event.key === "Enter") {
@@ -52,7 +57,6 @@ function mostrarPokemon(pokemon){
     var p = document.createElement('p');
     p.className="card-subtitle";
     p.innerText='tipo: ' + pokemon.types.map((type) => type.type.name).join(', ');
-
     d2.appendChild(h2);
     d2.appendChild(p);
     d1.appendChild(img);
@@ -70,6 +74,7 @@ function mostrar(data){
     });
   }
 
+<<<<<<< HEAD
   function mostrarPorTipo(data){
     data.pokemon.forEach(pokemon =>{
       pedirApi(pokemon.pokemon.url, mostrarPokemon)
@@ -91,6 +96,9 @@ function mostrar(data){
     });
   }
   
+=======
+
+>>>>>>> 7007b13cb51d465498569bc658e56ba66f07fba7
 function siguiente(url){
   document.getElementById('pokedex').innerHTML = " ";
   pedirApi(url, mostrar);
@@ -154,24 +162,66 @@ function loadTypes() {
           
       }
   }
-
-
 }
 
+<<<<<<< HEAD
 function findByTypes() {
   
   pedirApi("https://pokeapi.co/api/v2/type/"+ document.getElementById('tipos').value +"/", mostrarPorTipo);
+=======
+async function filtrar1(){
+	var aux=document.getElementById('tipos').value;
+	if (aux != "") {
+		await fetch("https://pokeapi.co/api/v2/type/"+aux+"/")
+	    .then(checkStatus)
+	    .then(parseJson)
+	    .then(function(data) {
+	      	data.pokemon.forEach(pokemon =>{
+	      		fil1.push(pokemon.pokemon.name);
+	    	});
+	    }).catch(function(error) {
+	      	console.log('Request failed', error);
+	      	return error;
+	    })
+    }
+>>>>>>> 7007b13cb51d465498569bc658e56ba66f07fba7
 }
 
-function findByColors() {
-  pedirApi("https://pokeapi.co/api/v2/pokemon-color/"+ document.getElementById('colores').value +"/", mostrarPorColor);
+async function filtrar2(){
+	var aux=document.getElementById('colores').value;
+	if (aux != "") {
+		await fetch("https://pokeapi.co/api/v2/pokemon-color/"+aux+"/")
+	    .then(checkStatus)
+	    .then(parseJson)
+	    .then(function(data) {
+	      	data.pokemon_species.forEach(pokemon =>{
+	      		fil2.push(pokemon.name);
+	    	});
+	    }).catch(function(error) {
+	      	console.log('Request failed', error);
+	      	return error;
+	    })
+	}
 }
 
-function findByHabitat() {
-  pedirApi("https://pokeapi.co/api/v2/pokemon-habitat/"+ document.getElementById('habitat').value +"/", mostrarporHabitat);
-
+async function filtrar3(){
+	var aux=document.getElementById('habitat').value;
+	if (aux != "") {
+		await fetch("https://pokeapi.co/api/v2/pokemon-habitat/"+aux+"/")
+	    .then(checkStatus)
+	    .then(parseJson)
+	    .then(function(data) {
+	      	data.pokemon_species.forEach(pokemon =>{
+	      		fil3.push(pokemon.name);
+	    	});
+	    }).catch(function(error) {
+	      	console.log('Request failed', error);
+	      	return error;
+	    })
+	}
 }
 
+<<<<<<< HEAD
 function filtrar(){
    document.getElementById('pokedex').innerHTML = "";
   if (document.getElementById('tipos').value != " ") 
@@ -183,6 +233,50 @@ function filtrar(){
   if (document.getElementById('colores').value != " ") 
     findByColors();
   
+=======
+function mergeFils(){
+	filtrados = new Array();
+	all.forEach(pokemon =>{
+	  	if ((fil1.includes(pokemon)) || (fil1.length == 0)) {
+	  		if ((fil2.includes(pokemon)) || (fil2.length == 0)) {
+	  			if ((fil3.includes(pokemon)) || (fil3.length == 0)) {
+	  				filtrados.push(pokemon);
+	  			}
+	  		}
+	  	}
+  });
+  if (filtrados.length == 0) {
+    alert('no hay resultados')
+  }else {
+	  filtrados.forEach(pokemon =>{
+	  	pedirApi("https://pokeapi.co/api/v2/pokemon/"+pokemon+"/", mostrarPokemon);
+    });
+  }
+	fil1 = new Array();
+	fil2 = new Array();
+	fil3 = new Array();
+	all = new Array();
+}
+
+function buscar(){
+    document.getElementById('pokedex').innerHTML = " "; 
+    fetch("https://pokeapi.co/api/v2/pokemon/?limit=964")
+    .then(checkStatus)
+    .then(parseJson)
+    .then(function(data) {
+    	data.results.forEach(pokemon =>{
+	  		all.push(pokemon.name);
+	    });
+      	return data;
+    }).catch(function(error) {
+      	console.log('Request failed', error);
+      	return error;
+    })
+    .then(filtrar1)
+    .then(filtrar2)
+    .then(filtrar3)
+    .then(mergeFils)
+>>>>>>> 7007b13cb51d465498569bc658e56ba66f07fba7
 }
 
   pedirApi("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964", mostrar)
