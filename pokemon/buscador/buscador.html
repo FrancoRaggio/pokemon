@@ -33,14 +33,17 @@
 
     <div id="medio">
       <div class="showBox">
-        <select id="historial" name="historial" ></select>
-          <option id="historial" value="" disabled selected >Historial</option>
+        <h1>historial</h1>
+        <p id="historial"></p>
         <div class="casilleros">
+          <div id="infopoke">
           <h2 class="tipo"> Nombre: </h2>
           <p class="texto" id="poke"></p><br/>
           <h2 class="tipo"> Habilidad: </h2>
           <p class="texto" id="habilidad"></p>
-          <img width="200" id="imagen-pokemon">
+          <div class="card-image">
+            <img id="imagen-pokemon">
+          </div>
           <button id="compartir" onclick="compartir" type="button">Compartir</button>
         </div>
       </div> 

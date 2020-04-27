@@ -19,20 +19,16 @@ search_input.addEventListener("keydown", async (event) => {
             for ( var pokemon of arreglo_de_pokemones ) {
                 arreglo_nombres.pop( pokemon.name );
             }     
-            var primeros_5_pokemones = arreglo_de_pokemones.slice( 0, 5);
+            var primeros_5_pokemones = arreglo_de_pokemones.slice( 1, 5);
             var arreglo_nombres = [ ];
             for ( var pokemon of primeros_5_pokemones ) {
                 if (primeros_5_pokemones >= 5) {
                     arreglo_nombres.unshift(pokemon.name);
                     arreglo_nombres.pop( pokemon.name );
-                    localStorage.setItem( "pokemones", JSON.stringify( arreglo_de_pokemones ));
-                    document.getElementById("historial").innerHTML = arreglo_nombres;
                     } else {
-                     arreglo_nombres.unshift(pokemon.name);
-                     localStorage.setItem( "pokemones", JSON.stringify( arreglo_de_pokemones ));
-                     document.getElementById("historial").innerHTML = arreglo_nombres;
+                     arreglo_nombres.unshift( pokemon.name );
                     };
-                
+                document.getElementById("historial").innerHTML = arreglo_nombres;
             }            
 
         });
@@ -137,3 +133,24 @@ function setImage(pokemon){
             }
         }
     }
+
+function verhistorial(clicked_id){
+    var identificador=clicked_id;
+    let url=`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964`;
+    const api= new XMLHttpRequest();
+    api.open('GET', url, true);
+    api.send();
+    api.onreadystatechange = function() {
+      if(this.status==200 && this.readyState==4)
+        {
+          let pokemones=JSON.parse(this.responseText);
+            let i=0;
+              for(let uno of pokemones) {
+                if (identificador == uno.id) {
+                  localStorage.setItem("nombre", uno.name);
+                }
+              }
+        }
+    }
+  }
+    

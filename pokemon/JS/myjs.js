@@ -74,31 +74,7 @@ function mostrar(data){
     });
   }
 
-<<<<<<< HEAD
-  function mostrarPorTipo(data){
-    data.pokemon.forEach(pokemon =>{
-      pedirApi(pokemon.pokemon.url, mostrarPokemon)
-    });
-  }
 
-  function mostrarPokemonSpecie(data){
-    pedirApi(data.varieties[0].pokemon.url, mostrarPokemon)
-  }
-
-  function mostrarporHabitat(data) {
-    data.pokemon_species.forEach(pokemon =>{
-      pedirApi(pokemon.url, mostrarPokemonSpecie)
-    });
-  }
-  function mostrarPorColor(data){
-    data.pokemon_species.forEach(pokemon =>{
-      pedirApi(pokemon.url, mostrarPokemonSpecie)
-    });
-  }
-  
-=======
-
->>>>>>> 7007b13cb51d465498569bc658e56ba66f07fba7
 function siguiente(url){
   document.getElementById('pokedex').innerHTML = " ";
   pedirApi(url, mostrar);
@@ -164,11 +140,6 @@ function loadTypes() {
   }
 }
 
-<<<<<<< HEAD
-function findByTypes() {
-  
-  pedirApi("https://pokeapi.co/api/v2/type/"+ document.getElementById('tipos').value +"/", mostrarPorTipo);
-=======
 async function filtrar1(){
 	var aux=document.getElementById('tipos').value;
 	if (aux != "") {
@@ -184,7 +155,6 @@ async function filtrar1(){
 	      	return error;
 	    })
     }
->>>>>>> 7007b13cb51d465498569bc658e56ba66f07fba7
 }
 
 async function filtrar2(){
@@ -221,19 +191,6 @@ async function filtrar3(){
 	}
 }
 
-<<<<<<< HEAD
-function filtrar(){
-   document.getElementById('pokedex').innerHTML = "";
-  if (document.getElementById('tipos').value != " ") 
-    findByTypes();
-  
-  if (document.getElementById('habitat').value != " ") 
-    findByHabitat();
-  
-  if (document.getElementById('colores').value != " ") 
-    findByColors();
-  
-=======
 function mergeFils(){
 	filtrados = new Array();
 	all.forEach(pokemon =>{
@@ -276,10 +233,9 @@ function buscar(){
     .then(filtrar2)
     .then(filtrar3)
     .then(mergeFils)
->>>>>>> 7007b13cb51d465498569bc658e56ba66f07fba7
 }
 
-  pedirApi("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964", mostrar)
+  pedirApi("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=30", mostrar)
 
   function mostrarmenu() {
     document.getElementById("filtros").style.width = "300px";
@@ -293,4 +249,25 @@ function ocultar() {
     document.getElementById("casilleros").style.marginLeft = "0";
     document.getElementById("abrir").style.display = "inline";
     document.getElementById("abrir").style.display = "none";
+}
+
+function verhistorial(clicked_id){
+  var identificador=clicked_id;
+  let url=`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=30`;
+  const api= new XMLHttpRequest();
+  api.open('GET', url, true);
+  api.send();
+  api.onreadystatechange = function() {
+    document.getElementById('search-button').addEventListener('click', getText, true);
+    if(this.status==200 && this.readyState==4)
+      {
+        let pokemones=JSON.parse(this.responseText);
+          let i=0;
+            for(let uno of pokemones) {
+              if (identificador == uno.id) {
+                localStorage.setItem("nombre", uno.name);
+              }
+            }
+      }
+  }
 }
