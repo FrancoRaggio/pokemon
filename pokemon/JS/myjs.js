@@ -28,9 +28,6 @@ function mostrarPokemon(pokemon){
     grp = document.getElementById('pokedex');
     var d1 = document.createElement('div');
     d1.className = "card";
-    var color = document.createElement('div');
-    color.className = "cardSub"
-    color.innerText=
     var img = document.createElement('img');
     img.className= "card-image";
     img.src=pokemon.sprites['front_default'];
@@ -48,7 +45,6 @@ function mostrarPokemon(pokemon){
     d1.appendChild(img);
     d1.appendChild(d2);
     grp.appendChild(d1);
-    d2.appendChild(color);
   }
 
 
@@ -76,13 +72,12 @@ function mostrar(data){
       pedirApi(pokemon.url, mostrarPokemonSpecie)
     });
   }
-
   function mostrarPorColor(data){
     data.pokemon_species.forEach(pokemon =>{
       pedirApi(pokemon.url, mostrarPokemonSpecie)
     });
   }
-
+  
 function siguiente(url){
   document.getElementById('pokedex').innerHTML = " ";
   pedirApi(url, mostrar);
@@ -150,7 +145,6 @@ function loadTypes() {
 
 }
 
-
 function findByTypes() {
   
   pedirApi("https://pokeapi.co/api/v2/type/"+ document.getElementById('tipos').value +"/", mostrarPorTipo);
@@ -166,19 +160,19 @@ function findByHabitat() {
 }
 
 function filtrar(){
-  document.getElementById('pokedex').innerHTML = "";
-  if (document.getElementById('tipos').value != " ") {
+   document.getElementById('pokedex').innerHTML = "";
+  if (document.getElementById('tipos').value != " ") 
     findByTypes();
-  }
-  if (document.getElementById('habitat').value != " ") {
+  
+  if (document.getElementById('habitat').value != " ") 
     findByHabitat();
-  }
-  if (document.getElementById('colores').value != " ") {
+  
+  if (document.getElementById('colores').value != " ") 
     findByColors();
-  }
+  
 }
 
-  pedirApi("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=30", mostrar)
+  pedirApi("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964", mostrar)
 
   function mostrarmenu() {
     document.getElementById("filtros").style.width = "300px";

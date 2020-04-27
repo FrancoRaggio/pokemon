@@ -17,16 +17,11 @@ search_input.addEventListener("keydown", async (event) => {
             var arreglo_nombres = [ ];
             for ( var pokemon of arreglo_de_pokemones ) {
                 arreglo_nombres.push( pokemon.name );
-            }
+            }     
             var primeros_10_pokemones = arreglo_de_pokemones.slice( 0, 9 );
-
             var arreglo_nombres = [ ];
             for ( var pokemon of primeros_10_pokemones ) {
                 arreglo_nombres .push( pokemon.name );
-                if (arreglo_nombres.length>9){
-                    arreglo_nombres.remove(arreglo_nombres.length-2);
-                }
-                
                 document.getElementById("historial").innerHTML = arreglo_nombres;
             }
             
