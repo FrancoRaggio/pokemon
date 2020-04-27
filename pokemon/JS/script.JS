@@ -8,6 +8,7 @@ search_input.addEventListener("keydown", async (event) => {
         pokemon.json().then( (poke) => { 
             setSkill( poke );
             setImage( poke );
+
             var arreglo_de_pokemones = JSON.parse(localStorage.getItem("pokemones"));
             if ( !arreglo_de_pokemones )  {
                 arreglo_de_pokemones = [ ];
@@ -16,21 +17,30 @@ search_input.addEventListener("keydown", async (event) => {
             localStorage.setItem( "pokemones", JSON.stringify( arreglo_de_pokemones ));
             var arreglo_nombres = [ ];
             for ( var pokemon of arreglo_de_pokemones ) {
-                arreglo_nombres.push( pokemon.name );
+                arreglo_nombres.pop( pokemon.name );
             }     
-            var primeros_10_pokemones = arreglo_de_pokemones.slice( 0, 9 );
+            var primeros_5_pokemones = arreglo_de_pokemones.slice( 0, 5);
             var arreglo_nombres = [ ];
-            for ( var pokemon of primeros_10_pokemones ) {
-                arreglo_nombres .push( pokemon.name );
-                document.getElementById("historial").innerHTML = arreglo_nombres;
-            }
-            
+            for ( var pokemon of primeros_5_pokemones ) {
+                if (primeros_5_pokemones >= 5) {
+                    arreglo_nombres.unshift(pokemon.name);
+                    arreglo_nombres.pop( pokemon.name );
+                    localStorage.setItem( "pokemones", JSON.stringify( arreglo_de_pokemones ));
+                    document.getElementById("historial").innerHTML = arreglo_nombres;
+                    } else {
+                     arreglo_nombres.unshift(pokemon.name);
+                     localStorage.setItem( "pokemones", JSON.stringify( arreglo_de_pokemones ));
+                     document.getElementById("historial").innerHTML = arreglo_nombres;
+                    };
+                
+            }            
+
         });
     }
 });
 const fetchPokemon = () => {
     const promises = [];
-    for (let i = 1; i <= 500; i++) {
+    for (let i = 1; i <= 50; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then((res) => res.json()));
     }
@@ -92,26 +102,6 @@ function setImage(pokemon){
     document.getElementById("imagen-pokemon").src=pokemon.sprites.front_default;
 }
  
-    function passvalues(clicked_id) {
-        var identificador=clicked_id;
-        let url =`https://pokeapi.co/api/v2/pokemon/`;
-        const api= new XMLHttpRequest();
-        api.open('GET', url, true);
-        api.send();
-
-        api.onreadystatechange=function() {
-            if(this.status == 200 && this.readyState == 4)
-            {
-                let pokemones=JSON.parse(this.responseText);
-                    let i=0;
-                        for(let uno of pokemones) {
-                            if (identificador ==uno.id) {
-                                localStorage.setItem("nombre",uno.name);
-                            }
-                        }
-            }
-        }
-    }
     function loadTypes() {
         let url =`https://pokeapi.co/api/v2/type`;
         const api= new XMLHttpRequest();
@@ -147,22 +137,3 @@ function setImage(pokemon){
             }
         }
     }
-function mostrarhistoial() {
-    if (typeof(Storage) !== "undefined") {
-        console.log('funciona');
-        // LocalStorage disponible
-        } else {
-        // LocalStorage no soportado en este navegador
-        }
-        
-}
-mostrarhistoial();
-
-    
-/*Agarra entre 200 pokemones aleatoriamente 
-function consultpokemons() {
-    let firstid = Math.round ( Math.random()* 200 )
-    let secondid = Math.round ( Math.random()* 200 )
-    consultpokemon(firstid, 1)
-    consultpokemon(secondid, 2)
-}*/

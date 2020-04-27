@@ -135,7 +135,7 @@ body {
 
 #tipos{
   background-color: white;
-
+  
 }
 
 #filtros{
@@ -143,7 +143,6 @@ body {
   background: #dddddd;    
   box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
   font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .cardSub{
@@ -223,6 +222,10 @@ body {
 
 .topnav .search-container button:hover {
   background: #ccc;
+}
+
+.abrir-cerrar {
+  display: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -322,6 +325,23 @@ footer{
   .container-body{
     display: block;
   }
+
+  #filtros{
+    width: 0%;
+    background: #dddddd;    
+    box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
+    font-family: Arial, Helvetica, sans-serif;
+    transition-duration: 1s, 2s;
+  }
+
+  #filtrar-img {
+    width: 5%;
+    height: 5%;
+  }
+  .abrir-cerrar {
+    margin-top:2%;
+    display: block;
+  }
   .colum1{
     max-width: 100%;
     text-align: center;
@@ -344,4 +364,26 @@ footer{
   .colum3 {
     display: none;
   }
+  .casilleros {
+    background:#dddddd;    
+    text-align: left;
+    text-transform: capitalize;
+    border-left: 5px solid rgb(179, 179, 179);
+    margin-top:0%;
+    padding: 1%;
+    justify-content: left;
+    flex-direction: column;
+    box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
+  }
+
+  .card{
+    padding: 0.5rem;
+    width: 78%;
+    margin: 1.8rem;
+    border-radius: 35px 0px 35px 0px;
+    margin-left: 2%;
+    float: left;
+    background-color: rgb(184, 184, 184);
+    border: 2px solid #b1b1b1;  
+}
 }

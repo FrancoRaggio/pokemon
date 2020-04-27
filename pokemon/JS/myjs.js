@@ -1,3 +1,16 @@
+var search_input = document.getElementById('search-input');
+search_input.addEventListener("keydown", async (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        var pokemon_name = document.getElementById( 'search-input' ).value;
+        var pokemon = await getPokemon( pokemon_name);
+        pokemon.json().then( (poke) => { 
+            setSkill( poke );
+            setImage( poke );
+        });
+    }
+});
+
 function checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
       return Promise.resolve(response)
@@ -178,13 +191,12 @@ function filtrar(){
     document.getElementById("filtros").style.width = "300px";
     document.getElementById("casilleros").style.marginLeft = "300px";
     document.getElementById("abrir").style.display = "none";
-    document.getElementById("cerrar").style.display = "inline";
+    document.getElementById("abrir").style.display = "inline";
 }
 
 function ocultar() {
     document.getElementById("filtros").style.width = "0";
     document.getElementById("casilleros").style.marginLeft = "0";
     document.getElementById("abrir").style.display = "inline";
-    document.getElementById("cerrar").style.display = "none";
+    document.getElementById("abrir").style.display = "none";
 }
- 
