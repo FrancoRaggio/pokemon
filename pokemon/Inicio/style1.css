@@ -13,8 +13,8 @@ body {
   padding: 0;
 }
 #cabecera {
-  background-color:  rgb(172, 172, 172);
-  width: 100%;;
+    background-color:  rgb(172, 172, 172);
+    width: 100%;;
     height: 20%;
     margin: 0px;
     color: rgb(255,255,255);
@@ -38,52 +38,17 @@ body {
   .topnav a span{
     margin-right: 10px;
   }
+
   .topnav a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+    font-family: Helvetica;
   }
-  
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .topnav a.active {
-    background-color: #2196F3;
-    color: white;
-  }
-  
-  .topnav .search-container {
-    float: right;
-  }
-  
-  .topnav input[type=text] {
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 17px;
-    border: none;
-  }
-  
-  .topnav .search-container button {
-    float: right;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .topnav .search-container button:hover {
-    background: #ccc;
-  }
-  
+
+#Texto-derecha {
+  padding: 5%;
+  color: rgb(73, 73, 73);
+  font-family: Helvetica;
+}
+
 #search-container {
   padding-top:5%;
   width: 30%;
@@ -93,33 +58,36 @@ body {
   float:right;
   padding: 0.1em;
 }
+  
+#medio {
+    width: 100%;
+    display:flex;
+  
+    
+}
 
-input[type="search"]{
-  width: 200px; /*ancho por defecto*/
-  background: #ededed url('../../imagenes/search-icon.png') no-repeat 9px center; /*icono lupa*/
-  padding: 9px 10px 9px 40px;
-  border-radius: 15em;
-  -webkit-transition: all .5s; /* transición de .5seg a todos los elementos para chrome*/
-  -moz-transition: all .5s; /* transición de .5seg a todos los elementos para mozilla*/
-  -o-transition: all .5s; /* transición de .5seg a todos los elementos para ophera*/
-  transition: all .5s; /* transición de .5seg a todos los elementos*/
-  outline: none; /* ocultar el fucos automático de los input */
+.filtro-form{
+  display:flex;
+  flex-direction: column;
+  
 }
-input[type="search"]:focus{
-  width: 280px; /*tamaño del boton buscar al hacer click*/
-  padding-left: 32px; /*espacio entre el icono lupa y el placeholder*/
-  color: #000;
-  background-color: #FFF;
+
+.margin-fil{
+  margin:1rem;
+  display: flex;
+  flex-direction: column;
 }
+
+
 .showBox {
     width: 100%;
-    height: 100%;
 
   }
   .casilleros {
     background:#dddddd;    
     text-align: center;
     text-transform: capitalize;
+    border-left: 5px solid rgb(179, 179, 179);
     margin-top:0%;
     padding: 2%;
     display:flex;
@@ -129,16 +97,12 @@ input[type="search"]:focus{
     box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
     flex-wrap: wrap;
   }
-.history{
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(201, 196, 196);
-  font-size: 18px;
-}
-#historial {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(201, 196, 196);
-  font-size: 15px;
-}
+
+  #sig{
+    margin-left: 2%;
+    margin-bottom: 2%;
+      }
+
   .tipo {
     display: inline;
   }
@@ -146,25 +110,75 @@ input[type="search"]:focus{
   .texto {
     display: inline;
   }
-
-  #footer {
-    width: 100%;
-    height: 300px;
-    background-color: gray;
+  #derecha {
+    float:right;
+    width: 20%;
+    height: 1000px;
+    background-color: rgb(100, 100, 100);
   }
+#pokedex {
+  width:100%;
+  height: 100%;
+}
+
+.card{
+  display: flex;
+  padding: 0.5rem;
+  width: 25%;
+  margin: 1.8rem;
+  border-radius: 35px 0px 35px 0px;
+  margin-left: 20px;
+  float: left;
+  background-color: rgb(184, 184, 184);
+  border: 2px solid #b1b1b1;
+}
+
+#tipos{
+  background-color: white;
+  
+}
+
+#filtros{
+  width: 20%;
+  background: #dddddd;    
+  box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cardSub{
+  margin:0;
+  font-family: helvetica;
+  margin-left:10px;
+}
+
+.card-image{
+  background-color: rgb(179, 179, 179);
+  border-radius: 50px;
+  box-shadow: 5px 5px 25px rgb(134, 134, 134) inset;  /* Sombra interior */
+}
+
+.card-title{
+  margin-top:5px;
+  font-family: sans-serif;
+  color: rgb(46, 46, 46);
+  text-align: left;
+}
+
+.card-title::first-letter{
+    text-transform: uppercase;
+}
+.card-subtitle{
+  margin-left: 0px;
+  color: rgb(73, 72, 72);
+  text-align:left;
+}
 
 #boton-buscar{
   width: 30%;
   margin-left:15px;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: #e9e9e9;
-}
-
 .topnav a {
-  font-family: Helvetica;
   float: left;
   display: block;
   color: black;
@@ -209,16 +223,12 @@ input[type="search"]:focus{
 .topnav .search-container button:hover {
   background: #ccc;
 }
+
+.abrir-cerrar {
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
-  .card-image{
-    width: 80%;
-    height: 40%;
-    margin-left:50%;
-    margin-top: 0%;
-    background-color: rgb(179, 179, 179);
-    border-radius: 50px;
-    box-shadow: 5px 5px 25px rgb(134, 134, 134) inset;  /* Sombra interior */
-  }
   .topnav .search-container {
     float: none;
   }
@@ -236,11 +246,10 @@ input[type="search"]:focus{
 }
 
 footer{
+  font-family: Arial, Helvetica, sans-serif;
   background: #202020;
   color: white;
   width: 100%;
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
 
 }
 .container-footer-all{
@@ -316,6 +325,23 @@ footer{
   .container-body{
     display: block;
   }
+
+  #filtros{
+    width: 0%;
+    background: #dddddd;    
+    box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
+    font-family: Arial, Helvetica, sans-serif;
+    transition-duration: 1s, 2s;
+  }
+
+  #filtrar-img {
+    width: 5%;
+    height: 5%;
+  }
+  .abrir-cerrar {
+    margin-top:2%;
+    display: block;
+  }
   .colum1{
     max-width: 100%;
     text-align: center;
@@ -338,4 +364,26 @@ footer{
   .colum3 {
     display: none;
   }
+  .casilleros {
+    background:#dddddd;    
+    text-align: left;
+    text-transform: capitalize;
+    border-left: 5px solid rgb(179, 179, 179);
+    margin-top:0%;
+    padding: 1%;
+    justify-content: left;
+    flex-direction: column;
+    box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
+  }
+
+  .card{
+    padding: 0.5rem;
+    width: 78%;
+    margin: 1.8rem;
+    border-radius: 35px 0px 35px 0px;
+    margin-left: 2%;
+    float: left;
+    background-color: rgb(184, 184, 184);
+    border: 2px solid #b1b1b1;  
+}
 }

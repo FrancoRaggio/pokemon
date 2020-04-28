@@ -25,8 +25,8 @@
       <a class="button" href="../ubicacion/ubicacion.html"><span class="icon-users"></span>Sobre Nosotros</a>
       <div class="search-container">
         <div>
-          <input id="search-input" type="text" placeholder="Buscar..." name="search">
-          <button id="search-button"><i class="fa fa-search"></i></button>
+          <input id="search-input" type="text" placeholder="Buscar" name="search">
+         
         </div>
       </div>
       </div>
@@ -71,7 +71,14 @@
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="../JS/myjs.JS"></script>
+  <script type="text/javascript" >
+    $(document).ready(function () {
+      $('#search-input').click(function () {
+        window.location.href='../buscador/buscador.html';
+        })
+    });
+  </script>
+    <script src="../JS/myjs.JS"></script>
   </body>
   <footer>
     <div class="container-footer-all">

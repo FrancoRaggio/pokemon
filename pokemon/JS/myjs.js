@@ -250,24 +250,3 @@ function ocultar() {
     document.getElementById("abrir").style.display = "inline";
     document.getElementById("abrir").style.display = "none";
 }
-
-function verhistorial(clicked_id){
-  var identificador=clicked_id;
-  let url=`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=30`;
-  const api= new XMLHttpRequest();
-  api.open('GET', url, true);
-  api.send();
-  api.onreadystatechange = function() {
-    document.getElementById('search-button').addEventListener('click', getText, true);
-    if(this.status==200 && this.readyState==4)
-      {
-        let pokemones=JSON.parse(this.responseText);
-          let i=0;
-            for(let uno of pokemones) {
-              if (identificador == uno.id) {
-                localStorage.setItem("nombre", uno.name);
-              }
-            }
-      }
-  }
-}

@@ -19,12 +19,12 @@ search_input.addEventListener("keydown", async (event) => {
             for ( var pokemon of arreglo_de_pokemones ) {
                 arreglo_nombres.pop( pokemon.name );
             }     
-            var primeros_5_pokemones = arreglo_de_pokemones.slice( 1, 5);
+            var primeros_5_pokemones = arreglo_de_pokemones.slice( 1, 6);
             var arreglo_nombres = [ ];
             for ( var pokemon of primeros_5_pokemones ) {
                 if (primeros_5_pokemones >= 5) {
-                    arreglo_nombres.unshift(pokemon.name);
-                    arreglo_nombres.pop( pokemon.name );
+                    arreglo_nombres.unshift(pokemon.name[0]);
+                    arreglo_nombres.pop(pokemon.name );
                     } else {
                      arreglo_nombres.unshift( pokemon.name );
                     };
