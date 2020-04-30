@@ -25,7 +25,11 @@ body {
     width: 60%;
     margin: auto; 
 }
-
+.historial {
+  background-color: rgb(145, 141, 141);
+  font-size: 15px;
+  
+}
 .topnav {
     overflow: hidden;
     width: 100%;

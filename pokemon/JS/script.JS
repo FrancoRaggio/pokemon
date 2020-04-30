@@ -19,8 +19,8 @@ search_input.addEventListener("keydown", async (event) => {
             for ( var pokemon of arreglo_de_pokemones ) {
                 arreglo_nombres.pop( pokemon.name );
             }     
-            var primeros_5_pokemones = arreglo_de_pokemones.slice( 1, 6);
-            var arreglo_nombres = [ ];
+            var primeros_5_pokemones = arreglo_de_pokemones.slice( 0, 5);
+            var arreglo_nombres = [];
             for ( var pokemon of primeros_5_pokemones ) {
                 if (primeros_5_pokemones >= 5) {
                     arreglo_nombres.unshift(pokemon.name[0]);
@@ -36,7 +36,7 @@ search_input.addEventListener("keydown", async (event) => {
 });
 const fetchPokemon = () => {
     const promises = [];
-    for (let i = 1; i <= 50; i++) {
+    for (let i = 1; i <= 500; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then((res) => res.json()));
     }
