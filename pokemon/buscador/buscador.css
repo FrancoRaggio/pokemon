@@ -134,10 +134,13 @@ input[type="search"]:focus{
   background-color: rgb(201, 196, 196);
   font-size: 18px;
 }
-#historial {
+.historial {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(201, 196, 196);
-  font-size: 15px;
+  background-color: rgb(211, 211, 211);
+  font-size: 18px;
+}
+#historial {
+  background-color: rgb(211, 211, 211);
 }
   .tipo {
     display: inline;
