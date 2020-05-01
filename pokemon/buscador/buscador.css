@@ -123,7 +123,7 @@ input[type="search"]:focus{
     margin-top:0%;
     padding: 2%;
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     justify-content: center;
     box-shadow: 5px 5px 25px rgb(197, 197, 197) inset;  /* Sombra interior */
@@ -142,19 +142,12 @@ input[type="search"]:focus{
 #historial {
   background-color: rgb(211, 211, 211);
 }
-  .tipo {
-    display: inline;
-  }
 
-  .texto {
-    display: inline;
-  }
-
-  #footer {
-    width: 100%;
-    height: 300px;
-    background-color: gray;
-  }
+#footer {
+  width: 100%;
+  height: 300px;
+  background-color: gray;
+}
 
 #boton-buscar{
   width: 30%;
@@ -212,16 +205,56 @@ input[type="search"]:focus{
 .topnav .search-container button:hover {
   background: #ccc;
 }
+.tipo {
+   display: block;
+   font-family:Helvetica;
+}
+    
+.texto {
+  display:block;
+  font-family:Arial;
+  color:rgb(68, 67, 67);
+}
+.card-image{
+  width: 50%;
+  border-radius: 35px 0px 35px 0px;
+  float:left;
+  background-color: rgb(184, 184, 184);
+  border: 2px solid #b1b1b1;
+  margin-left: 50px;
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+#mostrarpoke{
+  display: none;
+}       
+.infopoke {
+  align-content: center;
+}
+#imagen-pokemon{
+  align-content: center;
+
+}
+#compartir {
+  width:72%;
+  padding: 2%;
+  border: none;
+  background-color:rgb(147, 226, 147);
+  color: black;
+  border-radius:50px;
+}
 @media screen and (max-width: 600px) {
   .card-image{
-    width: 80%;
-    height: 40%;
-    margin-left:50%;
-    margin-top: 0%;
-    background-color: rgb(179, 179, 179);
-    border-radius: 50px;
-    box-shadow: 5px 5px 25px rgb(134, 134, 134) inset;  /* Sombra interior */
-  }
+    padding: 0.5rem;
+    width: 62%;
+    margin:8%;
+    border-radius: 35px 0px 35px 0px;
+    margin-left:20%;
+    float:center;
+    align-content: center;
+    background-color: rgb(184, 184, 184);
+    border: 2px solid #b1b1b1;  
+}
   .topnav .search-container {
     float: none;
   }

@@ -25,8 +25,8 @@
       <a class="button" href="../ubicacion/ubicacion.html"><span class="icon-users"></span>Sobre Nosotros</a>
       <div class="search-container">
         <div>
-          <input id="search-input" type="text" placeholder="Buscar..." name="search">
-          <button id="search-button"><i class="fa fa-search"></i></button>
+          <input id="search-input"  type="text" placeholder="Buscar..." name="search" onKeydown="mostrardiv()">
+          <button id="search-button"  onclick="mostrar()"><i class="fa fa-search"></i></button>
         </div>
       </div>
     </div>
@@ -36,20 +36,45 @@
         <p class="historial">Historial:</p>
         <p id="historial"></p>
         <div class="casilleros">
-          <div id="infopoke">
+          <div class="infopoke" id="infopoke">
           <h2 class="tipo"> Nombre: </h2>
-          <p class="texto" id="poke"></p><br/>
+          <p class="texto" id="poke"></p>
           <h2 class="tipo"> Habilidad: </h2>
           <p class="texto" id="habilidad"></p>
-          <div class="card-image">
-            <img id="imagen-pokemon">
+          <div id="mostrarpoke">
+            <div class="card-image">
+              <img id="imagen-pokemon">
+            </div>
+            <button id="compartir" onclick="compartir" type="button"><strong>Compartir</strong></button>
           </div>
-          <button id="compartir" onclick="compartir" type="button">Compartir</button>
-        </div>
+          </div>
       </div> 
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- mostrar con enter -->
+  <script>
+    function mostrardiv(){
+   if (event.keyCode == 13) {      
+      event.returnValue = false;
+      var div = document.getElementById('mostrarpoke');
+      div.style.display='block'
+      }else {
+        div.style.display = 'none';
+      }
+    }
+  </script>
+  <!-- mostrar con boton -->
+  <script>
+    function mostrar() {
+      var x = document.getElementById('mostrarpoke');
+      if (window.getComputedStyle(x).display=== 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
+    }
+    </script>
     <!-- boton compartir -->
     <script type="text/javascript" >
       $(document).ready(function () {
